@@ -5,6 +5,8 @@ from gensim.models import Word2Vec, KeyedVectors
 from sklearn.decomposition import PCA
 from matplotlib import pyplot as plt
 
+EMBEDDINGS_DIR = os.path.join("data", "embeddings")
+
 def print_csv_rows(file_name, n_rows):
     """
     print n_rows from a .csv file
@@ -17,12 +19,13 @@ def print_csv_rows(file_name, n_rows):
 
 # print_csv_rows(os.path.join("data","20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.csv"), 30)
 
-model_filename = os.path.join("data", "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin")
+model_filename = os.path.join(EMBEDDINGS_DIR, "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin")
 w2v_model = KeyedVectors.load_word2vec_format(model_filename, binary=True)
 
 def print_a_minus_b_plus_c(a, b, c):
     """
     calculate: king - man + woman = ?
+    i.e., man is to king what woman is to ?
     """
     result = w2v_model.most_similar(positive=[a, c], negative=[b], topn=10)
     print("'{}' minus '{}' plus '{}' equals:".format(a, b, c))
