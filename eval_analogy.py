@@ -17,12 +17,11 @@ print("Loading word2vec model...")
 w2v_model = KeyedVectors.load_word2vec_format(model_file, binary=True)
 print("Word2vec model loaded.")
 
-
 correct_total = 0
 incorrect_total = 0
 OOV_line_total = 0 # out of vocabulary
 n_lines = 0
-for eval_file in glob.glob(os.path.join(EVAL_DATA_DIR, "*.txt")):
+for eval_file in glob.glob(os.path.join(EVAL_DATA_DIR, "*.txt")): # for each file in dir
     print("Analogy task using the data in:", eval_file)
     with open(eval_file, "r") as f:
         # split file into lines and each line into words to create list nested inside a list
@@ -49,9 +48,11 @@ for eval_file in glob.glob(os.path.join(EVAL_DATA_DIR, "*.txt")):
             # print(err)
 
     try:
-        print("N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov}".format(n=len(data), correct=correct, per=correct*100/(correct+incorrect), oov=OOV_line))
+        print("N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov}".format( \
+            n=len(data), correct=correct, per=correct*100/(correct+incorrect), oov=OOV_line))
     except ZeroDivisionError:
-        print("N of lines: {n}, correct: {correct}, lines with OOV: {oov}".format(n=len(data), correct=correct, oov=OOV_line))
+        print("N of lines: {n}, correct: {correct}, lines with OOV: {oov}".format( \
+            n=len(data), correct=correct, oov=OOV_line))
     print()
     
     correct_total += correct
@@ -60,4 +61,6 @@ for eval_file in glob.glob(os.path.join(EVAL_DATA_DIR, "*.txt")):
     n_lines += len(data)
 
 print("Total scores:")
-print("N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov} ({oovper:.2f}%)".format(n=n_lines, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), oov=OOV_line_total, oovper=OOV_line_total*100/n_lines))
+print("N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov} ({oovper:.2f}%)".format( \
+    n=n_lines, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), \
+        oov=OOV_line_total, oovper=OOV_line_total*100/n_lines))
