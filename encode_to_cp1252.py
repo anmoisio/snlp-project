@@ -2,9 +2,11 @@ import os
 import glob
 
 # change encoding from utf-8 to cp1252 (aka 'windows 1252')
-# try this if you have problems with the letters дце
+# try this if you have problems with the letters nordic
 # if you get an UnicodeEncodeError, the file will be incomplete
 # (so best to take a copy of the .txt files somewhere before running this)
+
+# I think there is a problem with "kendo" in the intrusion data
 
 EVAL_DATA_DIR = os.path.join("data", "eval", "FinSemEvl", "FinSemEvl", "intrusion")
 

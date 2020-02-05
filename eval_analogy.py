@@ -1,6 +1,5 @@
 import numpy as np
 import os
-import csv
 import glob
 from gensim.models import Word2Vec, KeyedVectors
 

@@ -9,8 +9,8 @@ seed(12345) # change integer to get different random samples
 EMBEDDINGS_DIR = os.path.join("data", "embeddings")
 EVAL_DATA_DIR = os.path.join("data", "eval", "FinSemEvl", "FinSemEvl", "intrusion")
 
-# model_filename = "20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
-model_filename = "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
+model_filename = "20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
+# model_filename = "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
 # model_filename = "fin-word2vec-lemma.bin"
 
 model_file = os.path.join(EMBEDDINGS_DIR, model_filename)
@@ -54,11 +54,13 @@ for eval_file in glob.glob(os.path.join(EVAL_DATA_DIR, "*.txt")): # for all file
 correct_total = 0
 incorrect_total = 0
 OOV_line_total = 0
+n_total = 0
 for category, word_samples in all_samples.items():
     print("Intrusion task using the data in:", eval_file)
     correct = 0
     incorrect = 0
     OOV_line = 0
+    
     for word_sample in word_samples:
         print(word_sample)
         try:
@@ -72,10 +74,24 @@ for category, word_samples in all_samples.items():
             OOV_line += 1
             # print(err)
 
+    n_total += len(word_samples)
+    correct_total += correct
+    incorrect_total += incorrect
+    OOV_line_total += OOV_line
+
     try:
-        print("N of tasks: {n}, correct: {correct} ({per:.2f}%), groups with OOV: {oov}".format( \
+        print("N of tasks: {n}, correct: {correct} ({per:.2f}%), tasks with OOV: {oov}".format( \
             n=len(word_samples), correct=correct, per=correct*100/(correct+incorrect), oov=OOV_line))
     except ZeroDivisionError:
-        print("N of groups: {n}, correct: {correct}, groups with OOV: {oov}".format( \
+        print("N of tasks: {n}, correct: {correct}, tasks with OOV: {oov}".format( \
             n=len(data), correct=correct, oov=OOV_line))
     print()
+
+print("Total scores:")
+try:
+    print("N of tasks: {n}, correct: {correct} ({per:.2f}%), tasks with OOV: {oov}".format( \
+        n=n_total, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), oov=OOV_line_total))
+except ZeroDivisionError:
+    print("N of tasks: {n}, correct: {correct}, tasks with OOV: {oov}".format( \
+        n=n_total, correct=correct_total, oov=OOV_line_total))
+print()
