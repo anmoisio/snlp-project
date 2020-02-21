@@ -56,7 +56,7 @@ incorrect_total = 0
 OOV_line_total = 0
 n_total = 0
 for category, word_samples in all_samples.items():
-    print("Intrusion task using the data in:", eval_file)
+    print("Intrusion task using the data in:", category)
     correct = 0
     incorrect = 0
     OOV_line = 0
