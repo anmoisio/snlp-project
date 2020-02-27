@@ -1,0 +1,87 @@
+Using the word2vec model: fin-word2vec-lemma.bin
+Loading word2vec model...
+Word2vec model loaded.
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_antonymic_adjectives.txt
+N of lines: 182, correct: 52 (28.57%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_capital-country.txt
+N of lines: 380, correct: 4 (2.08%), lines with OOV: 188
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_cardinal-ordinal_numbers.txt
+N of lines: 110, correct: 9 (10.00%), lines with OOV: 20
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_country-currency.txt
+N of lines: 90, correct: 6 (7.41%), lines with OOV: 9
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_female-male.txt
+N of lines: 132, correct: 81 (61.36%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_hockeyTeam-city.txt
+N of lines: 72, correct: 1 (1.39%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_orthogonal_directions.txt
+N of lines: 71, correct: 42 (59.15%), lines with OOV: 0
+
+Total scores:
+N of lines: 1037, correct: 195 (23.78%), lines with OOV: 217 (20.93%)
+
+
+
+
+
+
+Using the word2vec model: 20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin
+Loading word2vec model...
+Word2vec model loaded.
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_antonymic_adjectives.txt
+N of lines: 182, correct: 60 (32.97%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_capital-country.txt
+N of lines: 380, correct: 0, lines with OOV: 380
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_cardinal-ordinal_numbers.txt
+N of lines: 110, correct: 24 (21.82%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_country-currency.txt
+N of lines: 90, correct: 0 (0.00%), lines with OOV: 42
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_female-male.txt
+N of lines: 132, correct: 78 (59.09%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_hockeyTeam-city.txt
+N of lines: 72, correct: 0, lines with OOV: 72
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_orthogonal_directions.txt
+N of lines: 71, correct: 14 (19.72%), lines with OOV: 0
+
+Total scores:
+N of lines: 1037, correct: 176 (32.41%), lines with OOV: 494 (47.64%)
+
+
+
+Using the word2vec model: 20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin
+Loading word2vec model...
+Word2vec model loaded.
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_antonymic_adjectives.txt
+N of lines: 182, correct: 56 (30.77%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_capital-country.txt
+N of lines: 380, correct: 0 (0.00%), lines with OOV: 367
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_cardinal-ordinal_numbers.txt
+N of lines: 110, correct: 20 (18.18%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_country-currency.txt
+N of lines: 90, correct: 0 (0.00%), lines with OOV: 27
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_female-male.txt
+N of lines: 132, correct: 60 (45.45%), lines with OOV: 0
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_hockeyTeam-city.txt
+N of lines: 72, correct: 0 (0.00%), lines with OOV: 62
+
+Analogy task using the data in: data\eval\FinSemEvl\FinSemEvl\analogy\ANA_orthogonal_directions.txt
+N of lines: 71, correct: 17 (23.94%), lines with OOV: 0
+
+Total scores:
+N of lines: 1037, correct: 153 (26.33%), lines with OOV: 456 (43.97%)
