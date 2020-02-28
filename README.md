@@ -13,3 +13,8 @@ Download pre-trained embeddings:
 - YLE + Wikipedia: https://data.ylestatic.fi/releases/20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin
 
 Move embeddings to data/embeddings/
+
+Embedding statistics:
+---
+fin-word2vec-lemma.bin:
+- vocab size: 2 208 293
