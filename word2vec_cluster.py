@@ -11,6 +11,7 @@ import logging
 import time
 from gensim.models import Word2Vec, KeyedVectors
 from sklearn.cluster import KMeans
+import pickle as pkl
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.WARNING)
 
@@ -27,7 +28,7 @@ def main():
     print("Load word2vec model ... ", end="", flush=True)
     w2v_model = KeyedVectors.load_word2vec_format(args.model, binary=bool(args.format))
     print("finished in {:.2f} sec.".format(time.time() - start), flush=True)
-    word_vectors = w2v_model.vectors
+    word_vectors = w2v_model.vectors[:2000]
     n_words = word_vectors.shape[0]
     vec_size = word_vectors.shape[1]
     print("#words = {0}, vector size = {1}".format(n_words, vec_size))
@@ -48,8 +49,12 @@ def main():
         line = word_centroid[0] + '\t' + str(word_centroid[1]) + '\n'
         file_out.write(line)
     file_out.close()
+    
+    centroids = kmeans.cluster_centers_
+    with open("centroids.pkl", "wb") as pklf:
+        pkl.dump(centroids, pklf)
+        
     print("finished in {:.2f} sec.".format(time.time() - start), flush=True)
-
     return
 
 if __name__ == "__main__":
