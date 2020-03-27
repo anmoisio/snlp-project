@@ -7,13 +7,15 @@ EMBEDDINGS_DIR = os.path.join("data", "embeddings")
 EVAL_DATA_DIR = os.path.join("data", "eval", "FinSemEvl", "FinSemEvl", "analogy")
 
 #model_filename = "20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
-model_filename = "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
-model_filename = "fin-word2vec-lemma.bin"
+# model_filename = "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
+# model_filename = "fin-word2vec-lemma.bin"
 
-model_file = os.path.join(EMBEDDINGS_DIR, model_filename)
-print("Using the word2vec model:", model_filename)
+# model_file = os.path.join(EMBEDDINGS_DIR, model_filename)
+model_file = "w2w_model.model"
+# print("Using the word2vec model:", model_filename)
 print("Loading word2vec model...")
-w2v_model = KeyedVectors.load_word2vec_format(model_file, binary=True)
+# w2v_model = KeyedVectors.load_word2vec_format(model_file, binary=True)
+w2v_model = Word2Vec.load(model_file)
 print("Word2vec model loaded.")
 
 correct_total = 0
