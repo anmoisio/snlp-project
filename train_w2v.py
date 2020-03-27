@@ -1,27 +1,26 @@
+'''
+Mostly from:
+https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html
+https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec
+'''
 from gensim.models import Word2Vec
+from gensim.test.utils import datapath
+from gensim import utils
 import os
 
-train_data_file = os.path.join("data", "corpora", "a-iltalehti-2020-02-28_normalized.txt")
+train_data_file = os.path.join("data", "corpora", "a-iltalehti-2020-02-28_normalized_split.txt")
 
+# yield lines one by one so that memory is not filled
+class MyCorpus(object):
+    """An interator that yields sentences (lists of str)."""
+    def __iter__(self):
+        for i, line in enumerate(open(train_data_file, 'r', encoding='utf-8')):
+            # assume there's one document per line, tokens separated by whitespace
+            yield line.split()
 
-def read_in_chunks(file_object, chunk_size=1024):
-    """
-    https://stackoverflow.com/questions/519633/lazy-method-for-reading-big-file-in-python
-    Lazy function (generator) to read a file piece by piece.
-    Default chunk size: 1k.
-    """
-    while True:
-        data = file_object.read(chunk_size)
-        if not data:
-            break
-        yield data
+            # if i > 1000: break
 
-
-with open(train_data_file, 'r') as f:
-    for piece in read_in_chunks(f):
-        process_data(piece)
-
-
-model = Word2Vec(common_texts, size=100, window=5, min_count=1, workers=4)
-
-model.save("word2vec-test.model")
+corpus_iterator = MyCorpus()
+model = Word2Vec(sentences=corpus_iterator, size=100, window=5, min_count=5, workers=4, sg=1, negative=15)
+# model.wv.save_word2vec_format("word2vec-test.txt", binary=False)
+model.save("w2w_model.model")

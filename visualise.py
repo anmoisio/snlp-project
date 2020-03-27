@@ -17,8 +17,8 @@ def print_csv_rows(file_name, n_rows):
             print(row)
             if n_rows == i: break
 
-# print_csv_rows(os.path.join("data","20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.csv"), 30)
-
+print_csv_rows(os.path.join("data","20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.csv"), 30)
+'''
 model_filename = os.path.join(EMBEDDINGS_DIR, "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin")
 w2v_model = KeyedVectors.load_word2vec_format(model_filename, binary=True)
 
@@ -52,3 +52,4 @@ for word in wordlist:
 plt.title("")
 
 plt.show()
+'''
