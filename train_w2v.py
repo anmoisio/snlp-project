@@ -74,6 +74,7 @@ model = Word2Vec(
                 workers=4,
                 sg=1,
                 negative=5,
+                compute_loss=True,
                 callbacks=[callback()],
             )
 # model.wv.save_word2vec_format("word2vec-test.txt", binary=False)

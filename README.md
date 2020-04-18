@@ -18,3 +18,4 @@ Embedding statistics:
 ---
 fin-word2vec-lemma.bin:
 - vocab size: 2 208 293
+- dim: 300
