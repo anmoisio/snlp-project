@@ -27,7 +27,7 @@ n_samples = 10
 all_samples = {} 
 
 for eval_file in glob.glob(os.path.join(EVAL_DATA_DIR, "*.txt")): # for all files in the dir
-    with open(eval_file, "r") as f:
+    with open(eval_file, "r", encoding="Utf-8") as f:
         # split file into lines and each line into words to create lists nested inside a list
         data = [line for line in f.read().splitlines()]
 
@@ -40,7 +40,7 @@ for eval_file in glob.glob(os.path.join(EVAL_DATA_DIR, "*.txt")): # for all file
             # make sure it's a different category
             if file_intrusion != eval_file: break 
 
-        with open(file_intrusion[0], "r") as f:
+        with open(file_intrusion[0], "r", encoding="Utf-8") as f:
             intrusion_words = [line for line in f.read().splitlines()]
 
         intrusion = sample(intrusion_words, 1)[0] # one word from the intrusion category
