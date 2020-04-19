@@ -89,4 +89,4 @@ model_file = os.path.join(EMBEDDINGS_DIR, model_filename)
 # how many groups of words per category
 n_samples = 10
 
-result_file = os.path.join("results", corpus_name + arg_string + "_results.txt")
+result_file = os.path.join("results", model_filename + "_results.txt")
