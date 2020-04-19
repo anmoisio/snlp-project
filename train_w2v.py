@@ -3,7 +3,7 @@ Mostly from:
 https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html
 https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec
 '''
-from gensim.models import Word2Vec
+from gensim.models import Word2Vec, FastText
 from gensim.models.callbacks import CallbackAny2Vec
 from gensim.test.utils import datapath
 from gensim import utils
@@ -54,6 +54,31 @@ def train_model():
                 )
 
     model.wv.save_word2vec_format(config.model_file, binary=config.binary)
+    print("Model trained. Saved in file", config.model_file)
+    print("Vocab size:", len(model.wv.vocab))
+
+    return model
+
+def train_fasttext_model():
+    print("Train model using corpus", config.train_data_file)
+    print("with parameters:")
+    for param, arg in config.arguments.items():
+        print(param, arg)
+
+    model = FastText(
+                    sentences = corpus_iterator,
+                    size =      config.arguments_fasttext['size'],
+                    alpha =     config.arguments_fasttext['alpha'],
+                    window =    config.arguments_fasttext['window'],
+                    min_count = config.arguments_fasttext['min_count'],
+                    workers =   config.arguments_fasttext['workers'],
+                    sg =        config.arguments_fasttext['sg'],
+                    negative =  config.arguments_fasttext['negative'],
+                    min_n =     config.arguments_fasttext['min_n'],
+                    max_n =     config.arguments_fasttext['max_n'],
+                )
+
+    model.wv.save(config.model_file)#, binary=config.binary)
     print("Model trained. Saved in file", config.model_file)
     print("Vocab size:", len(model.wv.vocab))
 

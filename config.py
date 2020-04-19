@@ -28,6 +28,16 @@ default_args = {
                 'max_final_vocab':None
 }
 
+# fasttext default train parameters
+default_args_fasttext = {
+                'min_n':3,         # min length of char ngram
+                'max_n':6,         # max length of char ngram
+                'bucket':2000000,  # number of buckets
+                'compatible_hash':True
+}
+default_args_fasttext.update(default_args)
+default_args_fasttext.pop('compute_loss')
+
 # word2vec train parameters
 arguments = {
             'size': 100,
@@ -39,6 +49,14 @@ arguments = {
             'negative': 5,
             'iter': 5,
 }
+
+# fasttext train parameters
+arguments_fasttext = {
+            'min_n':3,
+            'max_n':6,
+}
+arguments_fasttext.update(arguments)
+
 
 # create a string from the args for the file name
 print_parameters = {
@@ -67,6 +85,9 @@ corpus_name = "a-iltalehti-2020-02-28_normalized_split.txt"
 # corpus_name = "iltalehti-2020-02-28_wikipedia.txt"
 
 train_data_file = os.path.join(CORPUS_DIR, corpus_name)
+
+# Word2Vec/Fasttext
+w2vec = False
 
 # model file
 binary = True
