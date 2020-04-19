@@ -49,17 +49,19 @@ def intrusion(w2v_model):
     n_total = 0
     score_strings = ""
     for category, word_samples in all_samples.items():
-        score_string = "Intrusion task using the data in:" + category + "\n"
+        score_string = "Intrusion task using the data in:" + category
+        print(score_string)
+        score_string += "\n"
+
         correct = 0
         incorrect = 0
         OOV_line = 0
-        
         for word_sample in word_samples:
             score_string += str(word_sample) + "\n"
-            print(word_sample)
+            # print(word_sample)
             try:
                 result = w2v_model.doesnt_match(word_sample[0])
-                print("output: ", result)
+                # print("output: ", result)
                 score_string += "output: " + result + "\n"
                 if result == word_sample[1]:
                     correct += 1
@@ -86,7 +88,7 @@ def intrusion(w2v_model):
 
         score_strings += score_string + "\n"
 
-    tot_string = "Total scores:\n"
+    tot_string = "Total scores in intrusion task:\n"
     try:
         tot_string += "N of tasks: {n}, correct: {correct} ({per:.2f}%), tasks with OOV: {oov}\n".format( \
             n=n_total, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), oov=OOV_line_total)
@@ -95,7 +97,7 @@ def intrusion(w2v_model):
             n=n_total, correct=correct_total, oov=OOV_line_total)
     print(tot_string)
 
-    return score_strings + tot_string
+    return score_strings + tot_string + "\n"
     
 def analogy(w2v_model):
     """
@@ -108,7 +110,7 @@ def analogy(w2v_model):
     result_strings = ""
     for eval_file in glob.glob(os.path.join(config.EVAL_DATA_DIR, "analogy", "*.txt")): # for each file in dir
         result_string = "Analogy task using the data in:" + eval_file
-        with open(eval_file, "r") as f:
+        with open(eval_file, "r", encoding="utf-8") as f:
             # split file into lines and each line into words to create list nested inside a list
             data = [line.split() for line in f.read().splitlines()]
 
@@ -147,7 +149,7 @@ def analogy(w2v_model):
 
         result_strings += result_string + "\n"
 
-    bottom_line = "Total scores:\n"
+    bottom_line = "Total scores in analogy task:\n"
     bottom_line += "N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov} ({oovper:.2f}%)\n".format( \
         n=n_lines, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), \
             oov=OOV_line_total, oovper=OOV_line_total*100/n_lines)
@@ -172,7 +174,7 @@ def nearest_neighbours(w2v_model):
         try:
             neighbours = "word:", word, "nearest neighbour:", w2v_model.most_similar(word)
             results += str(neighbours) + "\n"
-            print(neighbours)
+            # print(neighbours)
         except KeyError as err:
             OOV_lines += 1
             # print(err)
