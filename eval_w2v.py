@@ -47,17 +47,20 @@ def intrusion(w2v_model):
     incorrect_total = 0
     OOV_line_total = 0
     n_total = 0
+    score_strings = ""
     for category, word_samples in all_samples.items():
-        print("Intrusion task using the data in:", category)
+        score_string = "Intrusion task using the data in:" + category + "\n"
         correct = 0
         incorrect = 0
         OOV_line = 0
         
         for word_sample in word_samples:
+            score_string += str(word_sample) + "\n"
             print(word_sample)
             try:
                 result = w2v_model.doesnt_match(word_sample[0])
                 print("output: ", result)
+                score_string += "output: " + result + "\n"
                 if result == word_sample[1]:
                     correct += 1
                 else:
@@ -71,23 +74,29 @@ def intrusion(w2v_model):
         incorrect_total += incorrect
         OOV_line_total += OOV_line
 
+        bottom_line = ""
         try:
-            print("N of tasks: {n}, correct: {correct} ({per:.2f}%), tasks with OOV: {oov}".format( \
-                n=len(word_samples), correct=correct, per=correct*100/(correct+incorrect), oov=OOV_line))
+            bottom_line = "N of tasks: {n}, correct: {correct} ({per:.2f}%), tasks with OOV: {oov}\n".format( \
+                n=len(word_samples), correct=correct, per=correct*100/(correct+incorrect), oov=OOV_line)
         except ZeroDivisionError:
-            print("N of tasks: {n}, correct: {correct}, tasks with OOV: {oov}".format( \
-                n=len(data), correct=correct, oov=OOV_line))
-        print()
+            bottom_line = " !division by zero! N of tasks: {n}, correct: {correct}, tasks with OOV: {oov}\n".format( \
+                n=len(data), correct=correct, oov=OOV_line)
+        print(bottom_line)
+        score_string += bottom_line + "\n"
 
-    print("Total scores:")
+        score_strings += score_string + "\n"
+
+    tot_string = "Total scores:\n"
     try:
-        print("N of tasks: {n}, correct: {correct} ({per:.2f}%), tasks with OOV: {oov}".format( \
-            n=n_total, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), oov=OOV_line_total))
+        tot_string += "N of tasks: {n}, correct: {correct} ({per:.2f}%), tasks with OOV: {oov}\n".format( \
+            n=n_total, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), oov=OOV_line_total)
     except ZeroDivisionError:
-        print("N of tasks: {n}, correct: {correct}, tasks with OOV: {oov}".format( \
-            n=n_total, correct=correct_total, oov=OOV_line_total))
-    print()
+        tot_string += " !division by zero!N of tasks: {n}, correct: {correct}, tasks with OOV: {oov}\n".format( \
+            n=n_total, correct=correct_total, oov=OOV_line_total)
+    print(tot_string)
 
+    return score_strings + tot_string
+    
 def analogy(w2v_model):
     """
     Evaluate word embeddings with the analogy task.
@@ -96,8 +105,9 @@ def analogy(w2v_model):
     incorrect_total = 0
     OOV_line_total = 0 # out of vocabulary
     n_lines = 0
+    result_strings = ""
     for eval_file in glob.glob(os.path.join(config.EVAL_DATA_DIR, "analogy", "*.txt")): # for each file in dir
-        print("Analogy task using the data in:", eval_file)
+        result_string = "Analogy task using the data in:" + eval_file
         with open(eval_file, "r") as f:
             # split file into lines and each line into words to create list nested inside a list
             data = [line.split() for line in f.read().splitlines()]
@@ -123,23 +133,27 @@ def analogy(w2v_model):
                 # print(err)
 
         try:
-            print("N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov}".format( \
-                n=len(data), correct=correct, per=correct*100/(correct+incorrect), oov=OOV_line))
+            result_string += "\nN of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov}\n".format( \
+                n=len(data), correct=correct, per=correct*100/(correct+incorrect), oov=OOV_line)
         except ZeroDivisionError:
-            print("N of lines: {n}, correct: {correct}, lines with OOV: {oov}".format( \
-                n=len(data), correct=correct, oov=OOV_line))
-        print()
+            result_string += "\n!division by zero! N of lines: {n}, correct: {correct}, lines with OOV: {oov}\n".format( \
+                n=len(data), correct=correct, oov=OOV_line)
+        print(result_string)
         
         correct_total += correct
         incorrect_total += incorrect
         OOV_line_total += OOV_line
         n_lines += len(data)
 
-    print("Total scores:")
-    print("N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov} ({oovper:.2f}%)".format( \
+        result_strings += result_string + "\n"
+
+    bottom_line = "Total scores:\n"
+    bottom_line += "N of lines: {n}, correct: {correct} ({per:.2f}%), lines with OOV: {oov} ({oovper:.2f}%)\n".format( \
         n=n_lines, correct=correct_total, per=correct_total*100/(correct_total+incorrect_total), \
-            oov=OOV_line_total, oovper=OOV_line_total*100/n_lines))
-    print()
+            oov=OOV_line_total, oovper=OOV_line_total*100/n_lines)
+    print(bottom_line)
+
+    return result_strings + bottom_line + "\n"
 
 def nearest_neighbours(w2v_model):
     """
@@ -151,13 +165,20 @@ def nearest_neighbours(w2v_model):
         csv_reader = csv.reader(csv_file, delimiter=',')
         finnish_words = [row[0] for row in csv_reader]
 
-    print("Nearest neighbours using the data in:", wordlist_file)
+    results = "Nearest neighbours using the data in:" + wordlist_file + "\n"
+    print(results)
     OOV_lines = 0
     for word in finnish_words:
         try:
-            print("word:", word, "nearest neighbour:", w2v_model.most_similar(word))
+            neighbours = "word:", word, "nearest neighbour:", w2v_model.most_similar(word)
+            results += str(neighbours) + "\n"
+            print(neighbours)
         except KeyError as err:
             OOV_lines += 1
             # print(err)
 
-    print("lines with OOV:", OOV_lines)
+    bottom_line = "lines with OOV:" + str(OOV_lines)
+    print(bottom_line)
+    results += bottom_line
+
+    return results

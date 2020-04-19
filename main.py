@@ -14,10 +14,12 @@ def main():
     print("Word2vec model loaded.")
 
     # evaluate
-    intrusion(w2v_model)
-    analogy(w2v_model)
-    nearest_neighbours(w2v_model)
+    result_string = intrusion(w2v_model)
+    result_string += analogy(w2v_model)
+    result_string += nearest_neighbours(w2v_model)
 
+    with open(config.result_file, 'w', encoding='utf-8') as f:
+        f.write(result_string)
 
 if __name__ == "__main__":
     main()

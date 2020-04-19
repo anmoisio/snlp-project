@@ -75,11 +75,12 @@ if binary:
 else:
     file_suffix = ".txt"
 
-model_filename = corpus_name + arg_string + file_suffix
+# model_filename = corpus_name + arg_string + file_suffix
 
 # model_filename = "20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
 # model_filename = "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5.bin"
 # model_filename = "fin-word2vec-lemma.bin"
+model_filename = "iltalehti-wikipedia-dim=300,window=5,mincount=2,sg=1,negative=15.bin"
 
 model_file = os.path.join(EMBEDDINGS_DIR, model_filename)
 
@@ -87,3 +88,5 @@ model_file = os.path.join(EMBEDDINGS_DIR, model_filename)
 # eval
 # how many groups of words per category
 n_samples = 10
+
+result_file = os.path.join("results", corpus_name + arg_string + "_results.txt")
