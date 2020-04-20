@@ -6,13 +6,12 @@ from random import sample, shuffle, seed
 import config
 import csv
 
-# change integer to get different random samples
-seed(12345)
-
 def intrusion(w2v_model):
     """
     Evaluate word embeddings with the intrusion task.
     """
+    # change integer to get different random samples
+    seed(12345)
         
     # dict of task samples
     # {'intrusion/animals.txt': [([cat, dog, basketball], basketball), ([horse, Sweden, cow], Sweden)], etc}
@@ -23,8 +22,10 @@ def intrusion(w2v_model):
             # split file into lines and each line into words to create lists nested inside a list
             data = [line for line in f.read().splitlines()]
 
+        n_samples = int(len(data) / 5)
+
         samples = []
-        for i in range(config.n_samples):
+        for i in range(n_samples):
             word_sample = sample(data, 5) # 5 words from this category
             while True:
                 # sample one of the other categories to get the intrusion word

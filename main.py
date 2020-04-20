@@ -84,7 +84,7 @@ if TRAIN:
 
     # loop to train and evaluate multiple models
     for min_count in range(5):
-        arguments['min_count'] = min_count
+        arguments['min_count'] = min_count + 1
 
         # create a string from the args for the file name
         # if fasttext, print also n-gram lengths
