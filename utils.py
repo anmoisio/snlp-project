@@ -2,7 +2,43 @@ import os
 import csv
 from sklearn.decomposition import PCA
 from matplotlib import pyplot as plt
+import config
+import glob
 
+def capitalize_analogy_data():
+    """
+    Capitalize proper nouns for analogy evaluation
+    """
+    for eval_file in glob.glob(os.path.join(config.EVAL_DATA_DIR, 
+                                            "analogy", "*.txt")):
+        if "country" in eval_file or "city" in eval_file:
+            capitalized_file = eval_file[:-4]+"_capitalized"+".txt"
+            print(eval_file)
+            with open(eval_file, "r", encoding="utf-8") as f:
+                # split file into lines and each line into words
+                # to create list nested inside a list
+                data = [line.split() for line in f.read().splitlines()]
+                capitalized_data=""
+                for line in data:
+                    if "currency" in eval_file:
+                        for word_idx in range(0,len(line),2):
+                            line[word_idx] = line[word_idx].capitalize()
+                    elif "capital" in eval_file:
+                        for word_idx in range(len(line)):
+                            line[word_idx] = line[word_idx].capitalize()
+                    elif "hockey" in eval_file:
+                        for word_idx in range(len(line)):
+                            line[word_idx] = line[word_idx].capitalize()
+                            if word_idx % 2 == 0:
+                                if len(line[word_idx])<5:
+                                    line[word_idx] = line[word_idx].upper()
+                                elif line[word_idx][-2:] == "pa":
+                                    line[word_idx] = line[word_idx][:-2] + \
+                                        line[word_idx][-2:].capitalize()
+                    capitalized_data += " ".join(line) + "\n"
+            with open(capitalized_file, 'w', encoding='utf-8') as f:
+                f.write(capitalized_data)
+                
 def combine_corpora():
     file1 = os.path.join("data", "corpora", "a-iltalehti-2020-02-28_normalized_split.txt")
     file2 = os.path.join("data", "corpora", "wikipedia2008_fi_lemmatized.txt")
