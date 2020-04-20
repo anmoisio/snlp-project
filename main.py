@@ -67,7 +67,7 @@ if TRAIN:
 
     print_parameters = {
         'size',
-        # 'alpha',
+        'alpha',
         'window',
         'min_count',
         'sg',
