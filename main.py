@@ -109,7 +109,7 @@ if TRAIN:
         result_string += analogy(model)
         result_string += nearest_neighbours(model)
 
-        result_file = os.path.join(model_type + "results", model_filename + "_results.txt")
+        result_file = os.path.join("results", model_type + model_filename + "_results.txt")
 
         with open(result_file, 'w', encoding='utf-8') as f:
             f.write(result_string)
@@ -137,7 +137,7 @@ else:
     result_string += analogy(model)
     result_string += nearest_neighbours(model)
 
-    result_file = os.path.join(model_type + "results", model_filename + "_results.txt")
+    result_file = os.path.join("results", model_type + model_filename + "_results.txt")
 
     with open(result_file, 'w', encoding='utf-8') as f:
         f.write(result_string)
