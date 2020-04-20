@@ -54,7 +54,7 @@ def train_model(model_type, arguments, model_file, train_data):
                         workers =   arguments['workers'],
                         sg =        arguments['sg'],
                         negative =  arguments['negative'],
-                        negative =  arguments['iter'],
+                        iter =      arguments['iter'],
                         compute_loss=True,
                         callbacks = [callback()],
                     )
@@ -71,7 +71,7 @@ def train_model(model_type, arguments, model_file, train_data):
                         workers =   arguments['workers'],
                         sg =        arguments['sg'],
                         negative =  arguments['negative'],
-                        negative =  arguments['iter'],
+                        iter =      arguments['iter'],
                         min_n =     arguments['min_n'],
                         max_n =     arguments['max_n'],
                     )
