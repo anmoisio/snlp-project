@@ -1,0 +1,818 @@
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_animals.txt
+(['tummajalkahyppypäästäinen', 'juovasukeltaja-antilooppi', 'kääpiöhiiri', 'argentiinanvesirotta', 'chilenhirvi', 'kurkkumätä'], 'kurkkumätä')
+output: chilenhirvi
+(['ohutsarvilammas', 'punapika', 'chilenpussirotta', 'nikobaarientupaija', 'freezeout', 'porsasskunkki'], 'freezeout')
+output: freezeout
+(['juovatanrekki', 'isoviiksilepakko', 'oravasaimiri', 'pikkulavantauti', 'jättiläislepakko', 'bongo'], 'pikkulavantauti')
+output: bongo
+(['augustinus', 'patagonianskunkki', 'arizonansiippa', 'kolmijuovapussihiiri', 'kukkakaviokuono', 'kirahvi'], 'augustinus')
+output: kukkakaviokuono
+(['filippiinienhevosenkenkäyökkö', 'lakkisifaka', 'harmaakuvemyyrä', 'viiksikirjolepakko', 'sukka', 'mopsilepakko'], 'sukka')
+output: harmaakuvemyyrä
+(['pakanuus', 'kääpiötupaija', 'uudenseelannindelfiini', 'harmaasiippa', 'pohjanpitkäkuonovyötiäinen', 'sika'], 'pakanuus')
+output: kääpiötupaija
+(['afrikankultakissa', 'metsämyyrä', 'tasmanianvalas', 'mustanäätä', 'mantsurianjänis', 'lippupallo'], 'lippupallo')
+output: metsämyyrä
+(['sisäkorvatulehdus', 'puna-antilooppi', 'munkkihylje', 'kuhlinpikkulepakko', 'isokorvahutia', 'suni'], 'sisäkorvatulehdus')
+output: munkkihylje
+(['kierteishäntäpiikkisika', 'pitkäkuonodelfiini', 'juovahautalepakko', 'vetokäsi', 'tiikerigenetti', 'sinivalas'], 'vetokäsi')
+output: vetokäsi
+(['vasarapäälentäväkoira', 'etelänpallovyötiäinen', 'mustahäntähyppymyyrä', 'viiksimarakatti', 'jerdoninpalmunäätä', 'tiikerihilleri'], 'etelänpallovyötiäinen')
+output: mustahäntähyppymyyrä
+(['myskihärkä', 'saketti', 'liljavampyyri', 'lyhytkuonohedelmälepakko', 'andiensuorotta', 'juovatanrekki'], 'saketti')
+output: lyhytkuonohedelmälepakko
+(['kiinantupaija', 'dianamarakatti', 'ääretön', 'norsupäästäinen', 'mindanaonrottasiili', 'altainpika'], 'ääretön')
+output: ääretön
+(['kolmivarvaslaiskiainen', 'vuoritsintsilloni', 'kettu', 'theravada', 'kettukusu', 'punamastiffilepakko'], 'theravada')
+output: punamastiffilepakko
+(['litium', 'tammihiiri', 'maruna-arosopuli', 'kierteishäntäkarhu', 'kergueleninmerikarhu', 'pitkäjalkavesirotta'], 'litium')
+output: maruna-arosopuli
+(['ohutpiikkipiikkisika', 'pitkäkuonopäästäiskenguru', 'putkikuonolepakko', 'puku', 'mustahäntäjänis', 'bushmannijänis'], 'pitkäkuonopäästäiskenguru')
+output: bushmannijänis
+(['bokseri', 'kameruninsaukko', 'laama', 'patagonianmerileijona', 'ceyloninpitkähäntäpäästäinen', 'gangesinjokidelfiini'], 'bokseri')
+output: gangesinjokidelfiini
+(['jakkihedelmä', 'ruskomölyapina', 'japaninokahiiri', 'truenvalas', 'preeriavaivaishiiri', 'kettukusu'], 'jakkihedelmä')
+output: truenvalas
+(['uruguay', 'maasusi', 'leopardikissa', 'pitkäkuonopussimäyrä', 'unkarinsokkohiiri', 'pohjantamandua'], 'uruguay')
+output: uruguay
+(['sapodilla', 'punapiikkipussimäyrä', 'arosopuli', 'kääpiöpussilumikko', 'pitkäkuono-orava', 'celebesinhevosenkenkäyökkö'], 'sapodilla')
+output: celebesinhevosenkenkäyökkö
+(['dromedaari', 'falanukki', 'olingo', 'sechuranki', 'kurttuhuulilepakko', 'afrikansivettikissa'], 'dromedaari')
+output: dromedaari
+N of tasks: 20, correct: 5 (25.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_chemical_elements.txt
+(['polonium', 'kalifornium', 'typpi', 'protaktinium', 'stibniitti', 'ununennium'], 'stibniitti')
+output: kalifornium
+(['krypton', 'neptunium', 'helium', 'kongruenssirelaatio', 'kloori', 'barium'], 'kongruenssirelaatio')
+output: barium
+(['natrium', 'iridium', 'fluori', 'hopea', 'neodyymi', 'mendelevium'], 'hopea')
+output: neodyymi
+(['yttrium', 'röntgenium', 'hassium', 'asianajaja', 'telluuri', 'bohrium'], 'asianajaja')
+output: bohrium
+(['karsastus', 'rikki', 'uraani', 'ytterbium', 'radium', 'boori'], 'karsastus')
+output: ytterbium
+(['volframi', 'kiwano', 'platina', 'rubidium', 'osmium', 'praseodyymi'], 'kiwano')
+output: rubidium
+(['kloori', 'tina', 'volframi', 'rutherfordium', 'kopernikium', 'hammashoitaja'], 'hammashoitaja')
+output: kopernikium
+(['telluuri', 'lime', 'ununseptium', 'cesium', 'platina', 'boori'], 'lime')
+output: ununseptium
+(['tallium', 'piru', 'torium', 'radon', 'lutetium', 'meitnerium'], 'piru')
+output: meitnerium
+(['vanadiini', 'seleeni', 'polonium', 'bromi', 'kopernikium', 'pankkitoimihenkilö'], 'pankkitoimihenkilö')
+output: kopernikium
+(['rutherfordium', 'unbinilium', 'praseodyymi', 'tantra', 'kromi', 'fosfori'], 'tantra')
+output: unbinilium
+(['fermium', 'frankium', 'magnesium', 'boori', 'ukkoslintu', 'teknetium'], 'ukkoslintu')
+output: teknetium
+(['fosfori', 'torium', 'seleeni', 'ununtrium', 'yrityslakimies', 'strontium'], 'yrityslakimies')
+output: ununtrium
+(['gadolinium', 'curium', 'plutonium', 'rauta', 'empeirikos', 'seleeni'], 'empeirikos')
+output: gadolinium
+(['musta', 'kloori', 'helium', 'fermium', 'frankium', 'unbiunium'], 'musta')
+output: unbiunium
+(['ksenon', 'barium', 'strontium', 'leijalautailu', 'titaani', 'neon'], 'leijalautailu')
+output: barium
+(['tukkumyyjä', 'nobelium', 'koboltti', 'polonium', 'sinkki', 'ununtrium'], 'tukkumyyjä')
+output: nobelium
+(['erbium', 'elohopea', 'kasvain', 'lutetium', 'europium', 'kadmium'], 'kasvain')
+output: erbium
+(['osmium', 'röntgenium', 'helluntaiherätys', 'cerium', 'ksenon', 'ununseptium'], 'helluntaiherätys')
+output: ununseptium
+(['freestylehiihto', 'astatiini', 'vanadiini', 'argon', 'bohrium', 'gadolinium'], 'freestylehiihto')
+output: bohrium
+N of tasks: 20, correct: 0 (0.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_cities.txt
+(['pieksämäki', 'valkeakoski', 'kuhmo', 'adorno', 'kankaanpää', 'loviisa'], 'adorno')
+output: adorno
+(['uimapuku', 'valkeakoski', 'nivala', 'nurmes', 'riihimäki', 'savonlinna'], 'uimapuku')
+output: riihimäki
+(['amishit', 'kauhajoki', 'närpiö', 'pudasjärvi', 'orimattila', 'laitila'], 'amishit')
+output: närpiö
+(['loviisa', 'kauniainen', 'virrat', 'haapavesi', 'orimattila', 'harjavalta'], 'orimattila')
+output: haapavesi
+(['kalajoki', 'kaskinen', 'akaa', 'kokemäki', 'kelkkailu', 'nurmes'], 'kelkkailu')
+output: nurmes
+(['oulainen', 'maarianhamina', 'kauhava', 'ähtäri', 'kokkola', 'naantali'], 'ähtäri')
+output: kokkola
+(['ikaalinen', 'rauma', 'koirahiihto', 'kauniainen', 'lahti', 'orivesi'], 'koirahiihto')
+output: orivesi
+(['valjakkohiihto', 'savonlinna', 'kuopio', 'kouvola', 'uusikaarlepyy', 'kokemäki'], 'valjakkohiihto')
+output: kouvola
+(['oulu', 'kitee', 'raahe', 'valkoinen', 'laitila', 'naantali'], 'valkoinen')
+output: raahe
+(['haapavesi', 'jäykkähalvaus', 'loimaa', 'hämeenlinna', 'hamina', 'kristiinankaupunki'], 'jäykkähalvaus')
+output: jäykkähalvaus
+(['pietarsaari', 'freezeout', 'kaskinen', 'haapavesi', 'ylöjärvi', 'raisio'], 'freezeout')
+output: freezeout
+(['ulvila', 'savonlinna', 'imatra', 'pieksämäki', 'parainen', 'maahinen'], 'maahinen')
+output: ulvila
+(['lieksa', 'alajärvi', 'rauma', 'rationaaliluvut', 'lappeenranta', 'alavus'], 'rationaaliluvut')
+output: alavus
+(['jämsä', 'kokemäki', 'pieksämäki', 'forssa', 'oulainen', 'laitoshuoltaja'], 'laitoshuoltaja')
+output: jämsä
+(['pyrrhon', 'pyhäjärvi', 'kaarina', 'raasepori', 'imatra', 'kuusamo'], 'pyrrhon')
+output: pyhäjärvi
+(['alajärvi', 'savonlinna', 'pyrrhon', 'harjavalta', 'lappeenranta', 'akaa'], 'pyrrhon')
+output: pyrrhon
+(['ylivieska', 'imatra', 'tornio', 'forssa', 'eskolaiitti', 'kuhmo'], 'eskolaiitti')
+output: tornio
+(['albiitti', 'mänttä-vilppula', 'valkeakoski', 'lieksa', 'kristiinankaupunki', 'raisio'], 'albiitti')
+output: mänttä-vilppula
+(['rauma', 'lahti', 'kuppa', 'kerava', 'heinola', 'karkkila'], 'kuppa')
+output: rauma
+(['kaskinen', 'mandealaisuus', 'haapajärvi', 'tornio', 'oulainen', 'kajaani'], 'mandealaisuus')
+output: tornio
+N of tasks: 20, correct: 4 (20.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_clothing.txt
+(['pyjama', 'paita', 'hooli', 'smokki', 'hattu', 'kypärä'], 'hooli')
+output: kypärä
+(['lakki', 't-paita', 'korsetti', 'derivaatta', 'kauluspaita', 'dominoviitta'], 'derivaatta')
+output: dominoviitta
+(['maihari', 'mosambik', 'kypärä', 'korsetti', 'pusero', 'alba'], 'mosambik')
+output: mosambik
+(['miekkavalas', 'kypärä', 'uimapuku', 'anorakki', 'kimono', 'stringit'], 'miekkavalas')
+output: kypärä
+(['lakki', 'saketti', 'korsetti', 'kauluspaita', 'pikkupurorotta', 'stringit'], 'pikkupurorotta')
+output: stringit
+(['turnyyri', 'moottoripyöräily', 'pyjama', 'rintaliivit', 'maihari', 'housut'], 'moottoripyöräily')
+output: moottoripyöräily
+(['sadetakki', 'sortsit', 'bokseri', 'maahinen', 'solmio', 'paita'], 'maahinen')
+output: sortsit
+(['dominoviitta', 'ksenofanes', 'uimapuku', 'rintaliivit', 'kengät', 'bikinit'], 'ksenofanes')
+output: ksenofanes
+(['kurahaalarit', 'smokki', 'uimapuku', 'paita', 'descartes', 'stringit'], 'descartes')
+output: descartes
+(['smokki', 'saketti', 'lakki', 'rusetti', 'kiwano', 'solmio'], 'kiwano')
+output: kiwano
+(['krinoliini', 'kimono', 'rusetti', 'neliöjuuri', 'kengät', 'burkha'], 'neliöjuuri')
+output: burkha
+(['frakki', 'turnyyri', 'sadetakki', 'lesotho', 'dominoviitta', 'pusero'], 'lesotho')
+output: lesotho
+(['turnyyri', 'kengät', 'purppura', 'pyjama', 'sukka', 'stringit'], 'purppura')
+output: turnyyri
+(['kauhtana', 'uimapuku', 'sukka', 'tapioliitti', 'saketti', 'maihari'], 'tapioliitti')
+output: uimapuku
+(['bikinit', 'valkoinen', 'hattu', 'bokseri', 'pyjama', 'korsetti'], 'valkoinen')
+output: bokseri
+(['oulainen', 'kengät', 'sukkahousut', 'vyö', 'sadetakki', 'sukka'], 'oulainen')
+output: vyö
+(['jumpperi', 'alba', 'heads-up', 'sukkahousut', 'frakki', 'kurahaalarit'], 'heads-up')
+output: heads-up
+(['stringit', 'uimapuku', 'dominoviitta', 'burkha', 'kauluspaita', 'suriname'], 'suriname')
+output: burkha
+(['jumpperi', 'itseisarvo', 'sadetakki', 'kimono', 'kengät', 'maihari'], 'itseisarvo')
+output: jumpperi
+(['pusero', 'sortsit', 'alavus', 'pipo', 'housut', 'uimapuku'], 'alavus')
+output: housut
+N of tasks: 20, correct: 7 (35.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_colors.txt
+(['sininen', 'harmaa', 'teal', 'panteismi', 'lime', 'roosa'], 'panteismi')
+output: harmaa
+(['okra', 'kulta', 'seepia', 'punamulta', 'valkoinen', 'punamulta'], 'punamulta')
+output: seepia
+(['punainen', 'lila', 'ruoste', 'heads-up', 'tulenpunainen', 'turkoosi'], 'heads-up')
+output: heads-up
+(['fuksia', 'lila', 'sinooberi', 'nikkeli', 'ruskea', 'roosa'], 'nikkeli')
+output: sinooberi
+(['seepia', 'isomorfismi', 'purppura', 'asuuri', 'oliivinvihreä', 'punamulta'], 'isomorfismi')
+output: isomorfismi
+(['burundi', 'bordeaux', 'harmaa', 'laivastonsininen', 'karmiini', 'punamulta'], 'burundi')
+output: bordeaux
+(['oranssi', 'ftalosyaniini', 'kastanja', 'elektroniikka-asentaja', 'ruoste', 'sininen'], 'elektroniikka-asentaja')
+output: ruoste
+(['kirsikanpunainen', 'valko-venäjä', 'turkoosi', 'koralli', 'kulta', 'purppura'], 'valko-venäjä')
+output: kirsikanpunainen
+(['syaani', 'meripihka', 'derivaatta', 'kirsikanpunainen', 'purppura', 'bordeaux'], 'derivaatta')
+output: bordeaux
+(['laivastonsininen', 'roosa', 'smaragdinvihreä', 'sininen', 'asuuri', 'beige'], 'sininen')
+output: beige
+(['laivastonsininen', 'musta', 'vihreä', 'punainen', 'praseodyymi', 'asuuri'], 'praseodyymi')
+output: praseodyymi
+(['oliivinvihreä', 'karmosiini', 'punainen', 'pegasos', 'oranssi', 'meripihka'], 'pegasos')
+output: meripihka
+(['koralli', 'ruskea', 'asuuri', 'beige', 'isopiikkohirvi', 'khaki'], 'isopiikkohirvi')
+output: beige
+(['karmosiini', 'ruskea', 'erisuuruus', 'ecru', 'musta', 'keltainen'], 'erisuuruus')
+output: ecru
+(['titaanivalkoinen', 'beige', 'hopea', 'kirsikanpunainen', 'checkata', 'keltainen'], 'checkata')
+output: beige
+(['lila', 'isabella', 'violetti', 'koralli', 'sinkkivalkoinen', 'ecru'], 'isabella')
+output: ecru
+(['kirsikanpunainen', 'sinkkivalkoinen', 'ruskopäähämähäkkiapina', 'musta', 'indigo', 'asuuri'], 'ruskopäähämähäkkiapina')
+output: indigo
+(['valkoinen', 'limenvihreä', 'titaanivalkoinen', 'kirsikanpunainen', 'kompleksiluvut', 'ruskea'], 'kompleksiluvut')
+output: kompleksiluvut
+(['meripihka', 'asuuri', 'bordeaux', 'karmosiini', 'vihreä', 'lavastaja'], 'lavastaja')
+output: bordeaux
+(['kastanja', 'ecru', 'isabella', 'smaragdinvihreä', 'vihreä', 'suunnittelija'], 'suunnittelija')
+output: ecru
+N of tasks: 20, correct: 4 (20.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_countries.txt
+(['vanuatu', 'turkki', 'ateroskleroosi', 'turkmenistan', 'slovenia', 'kuwait'], 'ateroskleroosi')
+output: slovenia
+(['indonesia', 'itävalta', 'turkki', 'meksikonpuupiikkisika', 'liberia', 'iran'], 'meksikonpuupiikkisika')
+output: iran
+(['vyö', 'albania', 'mauritius', 'venäjä', 'libya', 'nigeria'], 'vyö')
+output: vyö
+(['japani', 'derrida', 'kuuba', 'salomonsaaret', 'honduras', 'kuwait'], 'derrida')
+output: honduras
+(['etelä-afrikka', 'malediivit', 'madagaskar', 'kvitteni', 'uusi-seelanti', 'libya'], 'kvitteni')
+output: madagaskar
+(['guinea', 'belize', 'freezeout', 'islanti', 'liettua', 'sambia'], 'freezeout')
+output: freezeout
+(['pakistan', 'saudi-arabia', 'zimbabwe', 'monaco', 'palau', 'uganda'], 'uganda')
+output: zimbabwe
+(['erytriini', 'belgia', 'haiti', 'nauru', 'fidži', 'uusi-seelanti'], 'erytriini')
+output: fidži
+(['uganda', 'hobbes', 'malta', 'zimbabwe', 'guinea', 'sudan'], 'hobbes')
+output: zimbabwe
+(['kuuba', 'kambodža', 'uusi-seelanti', 'sokerimeloni', 'sudan', 'egypti'], 'sokerimeloni')
+output: egypti
+(['palau', 'kauhtana', 'uusi-seelanti', 'marokko', 'australia', 'nicaragua'], 'kauhtana')
+output: nicaragua
+(['tennis', 'bulgaria', 'italia', 'marokko', 'marshallinsaaret', 'vietnam'], 'tennis')
+output: bulgaria
+(['saksa', 'italia', 'israel', 'konvoluutio', 'panama', 'marshallinsaaret'], 'konvoluutio')
+output: israel
+(['jordania', 'honduras', 'indonesia', 'papua-uusi-guinea', 'palau', 'kenia'], 'honduras')
+output: honduras
+(['bulgaria', 'angola', 'kurahaalarit', 'sveitsi', 'chile', 'papua-uusi-guinea'], 'kurahaalarit')
+output: angola
+(['sambia', 'turkki', 'suriname', 'liberia', 'sudan', 'livermorium'], 'livermorium')
+output: livermorium
+(['belgia', 'norja', 'integraali', 'nepal', 'iran', 'oman'], 'integraali')
+output: belgia
+(['irak', 'intianaavikkosiili', 'kanada', 'mauritania', 'kenia', 'komorit'], 'intianaavikkosiili')
+output: irak
+(['kuuba', 'nicaragua', 'lesotho', 'tšad', 'tupaija', 'armenia'], 'tupaija')
+output: tšad
+(['zimbabwe', 'bangladesh', 'namibia', 'sveitsi', 'kirurgi', 'bulgaria'], 'kirurgi')
+output: bangladesh
+N of tasks: 20, correct: 4 (20.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_fruit.txt
+(['sitruuna', 'lakki', 'banaani', 'pomeranssi', 'mangostaani', 'rumeliini'], 'lakki')
+output: sitruuna
+(['päärynä', 'passionhedelmä', 'omena', 'sapodilla', 'pähkinä', 'pähkinä'], 'pähkinä')
+output: päärynä
+(['oliivi', 'verkkomeloni', 'meloni', 'persimon', 'ympäristönsuojelutarkastaja', 'viikuna'], 'ympäristönsuojelutarkastaja')
+output: verkkomeloni
+(['longaani', 'satsuma', 'pomeranssi', 'ananas', 'gnostilaisuus', 'feijoa'], 'gnostilaisuus')
+output: feijoa
+(['omena', 'maaemo', 'persimon', 'ananaskirsikka', 'sitruuna', 'kiivi'], 'maaemo')
+output: kiivi
+(['mango', 'ananaskirsikka', 'keittobanaani', 'mandariini', 'lääkintävahtimestari', 'kvitteni'], 'lääkintävahtimestari')
+output: mango
+(['limkvatti', 'guava', 'sokerimeloni', 'limetti', 'kelkkailu', 'viinirypäle'], 'kelkkailu')
+output: viinirypäle
+(['guava', 'salaki', 'kumkvatti', 'pitahaya', 'sitruuna', 'luufinni'], 'luufinni')
+output: luufinni
+(['nikkoliitti', 'kaktusviikuna', 'salaki', 'longaani', 'mango', 'pähkinä'], 'nikkoliitti')
+output: mango
+(['pomelo', 'cantaloupemeloni', 'marx', 'banaani', 'granadilla', 'satsuma'], 'marx')
+output: granadilla
+(['atsuriitti', 'limetti', 'luumu', 'viinirypäle', 'kastanja', 'mandariini'], 'atsuriitti')
+output: viinirypäle
+(['rambutani', 'persikka', 'rumeliini', 'mangostaani', 'pähkinä', 'litsi'], 'persikka')
+output: rambutani
+(['galiameloni', 'aprikoosi', 'nashi', 'passionhedelmä', 'liberia', 'longaani'], 'liberia')
+output: nashi
+(['guava', 'karmiini', 'greippi', 'aprikoosi', 'annoona', 'vesimeloni'], 'karmiini')
+output: greippi
+(['riihimäki', 'sitruuna', 'nektariini', 'viinirypäle', 'taateli', 'galiameloni'], 'riihimäki')
+output: riihimäki
+(['epikuros', 'papaija', 'sweetie', 'ananas', 'nektariini', 'meloni'], 'epikuros')
+output: sweetie
+(['longaani', 'omena', 'kaktusviikuna', 'viinirypäle', 'kumkvatti', 'mörkö'], 'mörkö')
+output: mörkö
+(['mango', 'paholaispudu', 'mangostaani', 'kirsikkaluumu', 'jakkihedelmä', 'nashi'], 'paholaispudu')
+output: nashi
+(['kumkvatti', 'appelsiini', 'nashi', 'passionhedelmä', 'plus-miinus', 'kirsikkaluumu'], 'plus-miinus')
+output: nashi
+(['satsuma', 'hunajameloni', 'päärynä', 'ananaskirsikka', 'rullakiekko', 'sitruuna'], 'rullakiekko')
+output: päärynä
+N of tasks: 20, correct: 3 (15.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_illnesses.txt
+(['heinänuha', 'zoonoosi', 'uremia', 'yksisarvinen', 'protanopia', 'vatsatauti'], 'yksisarvinen')
+output: vatsatauti
+(['amebiaasi', 'melanooma', 'fibromyalgia', 'delta', 'aivokasvain', 'jäykkähalvaus'], 'delta')
+output: fibromyalgia
+(['palovamma', 'aspartylglukosaminuria', 'näkki', 'aurinkoihottuma', 'tuhkarokko', 'pernarutto'], 'näkki')
+output: aspartylglukosaminuria
+(['kyhmyruusu', 'laihuushäiriö', 'nuha', 'veriripuli', 'paise', 'krinoliini'], 'krinoliini')
+output: laihuushäiriö
+(['jäykkäkouristus', 'mahasyöpä', 'infektio', 'hyvinkää', 'paiserutto', 'tuhkarokko'], 'hyvinkää')
+output: mahasyöpä
+(['virtsakivet', 'kaasukuolio', 'vatsakalvontulehdus', 'urheiluhieroja', 'syöpä', 'tyvisolusyöpä'], 'urheiluhieroja')
+output: tyvisolusyöpä
+(['pakistan', 'pesuaineihottuma', 'kaasukuolio', 'deuteranopsia', 'vatsakalvontulehdus', 'aivokasvain'], 'pakistan')
+output: aivokasvain
+(['keuhkoastma', 'angiina', 'maitotauti', 'luomirakkula', 'jemen', 'legioonalaistauti'], 'jemen')
+output: keuhkoastma
+(['keloidiakne', 'verkkokalvorappeuma', 'rsi', 'ihosyöpä', 'ataksia', 'liechtenstein'], 'liechtenstein')
+output: ihosyöpä
+(['sisäkorvatulehdus', 'kauluspaita', 'jalkasieni', 'nivelrikko', 'rvf', 'aivoverenvuoto'], 'kauluspaita')
+output: rvf
+(['lepra', 'nielutulehdus', 'keloidiakne', 'protanopsia', 'kondylooma', 'yskänrokko'], 'kondylooma')
+output: yskänrokko
+(['sirppisoluanemia', 'visvasyylä', 'loiasis-tauti', 'kaukalopallo', 'absessi', 'pesuaineihottuma'], 'kaukalopallo')
+output: loiasis-tauti
+(['virtsakivet', 'vesihiihto', 'bulimia', 'rengasgranulooma', 'lavantauti', 'palovamma'], 'vesihiihto')
+output: virtsakivet
+(['huulihalkio', 'klooriakne', 'välilevypullistuma', 'silmäpasko', 'svetambara', 'xanthoma'], 'svetambara')
+output: klooriakne
+(['tornio', 'lääkeakne', 'polio', 'punahukka', 'kretinismi', 'ruokamyrkytys'], 'tornio')
+output: kretinismi
+(['punahukka', 'punajäkälä', 'viro', 'silsa', 'aurinkoakne', 'thalassaemia'], 'viro')
+output: punajäkälä
+(['anorakki', 'aivokalvontulehdus', 'luufinni', 'rvf', 'adhesiiviotiitti', 'autoimmuunisaatio'], 'anorakki')
+output: rvf
+(['fibromyalgia', 'hammasmätä', 'ruusufinni', 'absessi', 'vihurirokko', 'fuksia'], 'fuksia')
+output: fibromyalgia
+(['luomistauti', 'tulirokko', 'karsastus', 'bulimia', 'anemia', 'prometium'], 'prometium')
+output: prometium
+(['maitorupi', 'ms-tauti', 'adhesiiviotiitti', 'sepelvaltimotauti', 'käsipallo', 'akrosyanoosi'], 'käsipallo')
+output: ms-tauti
+N of tasks: 20, correct: 1 (5.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_mathematical_symbols.txt
+(['brasilia', 'universaalikvanttori', 'ristitulo', 'pistetulo', 'todennäköisyysjakauma', 'epäyhtälö'], 'brasilia')
+output: todennäköisyysjakauma
+(['verrannollisuus', 'yhdensuuntaisuus', 'seuraa', 'zenon', 'miinus-plus', 'yläjoukko'], 'zenon')
+output: zenon
+(['gradientti', 'kompleksiluvut', 'bournoniitti', 'keskiarvo', 'kertolasku', 'yhdensuuntaisuus'], 'bournoniitti')
+output: kompleksiluvut
+(['verrannollisuus', 'miinus-plus', 'universaalikvanttori', 'johtopäätös', 'konvoluutio', 'derivaatta'], 'verrannollisuus')
+output: miinus-plus
+(['reaaliluvut', 'joukkosulkeet', 'oranssi', 'konvoluutio', 'ristitulo', 'itseisarvo'], 'oranssi')
+output: reaaliluvut
+(['protagoras', 'yhdenmuotoisuus', 'yläjoukko', 'tulo', 'implikaatio', 'miinus-plus'], 'protagoras')
+output: miinus-plus
+(['yläjoukko', 'kohtisuoruus', 'akaa', 'yhdensuuntaisuus', 'määritelmä', 'pistetulo'], 'akaa')
+output: kohtisuoruus
+(['miinus-plus', 'raahe', 'kokonaisluvut', 'vähennyslasku', 'normi', 'pistetulo'], 'raahe')
+output: miinus-plus
+(['kurahaalarit', 'yksikäsitteisyyskvanttori', 'itseisarvo', 'konvoluutio', 'jakaa', 'rationaaliluvut'], 'kurahaalarit')
+output: konvoluutio
+(['yläjoukko', 'kohtisuoruus', 'osittaisderivaatta', 'yhdensuuntaisuus', 'johtopäätös', 'yhtäsuuruus'], 'yhdensuuntaisuus')
+output: osittaisderivaatta
+(['plus-miinus', 'derivaatta', 'maihari', 'yhdensuuntaisuus', 'ääretön', 'yhdenmuotoisuus'], 'maihari')
+output: ääretön
+(['kongruenssirelaatio', 'jakolasku', 'yläjoukko', 'puertoriconkukkaleikko', 'vähennyslasku', 'yhdenmuotoisuus'], 'puertoriconkukkaleikko')
+output: vähennyslasku
+(['erisuuruus', 'huivi', 'kongruenssirelaatio', 'kertolasku', 'seuraa', 'määritelmä'], 'huivi')
+output: huivi
+(['tensoritulo', 'neliöjuuri', 'jadeiitti', 'johtopäätös', 'konvoluutio', 'implikaatio'], 'jadeiitti')
+output: konvoluutio
+(['kongruenssirelaatio', 'jakolasku', 'itseisarvo', 'johtopäätös', 'tekijäryhmä', 'rakkulaihottuma'], 'rakkulaihottuma')
+output: jakolasku
+(['isomorfismi', 'koiravaljakkoajo', 'pistetulo', 'yhdenmuotoisuus', 'plus-miinus', 'kertoma'], 'koiravaljakkoajo')
+output: isomorfismi
+(['vuorenpeikko', 'seuraa', 'tensoritulo', 'kohtisuoruus', 'ekvivalenssi', 'plus-miinus'], 'vuorenpeikko')
+output: plus-miinus
+(['yläjoukko', 'diogenes', 'neliöjuuri', 'kertoma', 'johtopäätös', 'yhtäsuuruus'], 'diogenes')
+output: diogenes
+(['yksikäsitteisyyskvanttori', 'tekijäryhmä', 'integraali', 'yhteenlasku', 'jättiläinen', 'erisuuruus'], 'jättiläinen')
+output: yksikäsitteisyyskvanttori
+(['plus-miinus', 'joukkosulkeet', 'verrannollisuus', 'kongruenssirelaatio', 'blindi', 'sisätulo'], 'blindi')
+output: plus-miinus
+N of tasks: 20, correct: 3 (15.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_minerals.txt
+(['stringit', 'morganiitti', 'gorceixiitti', 'krysokolla', 'tina', 'kainiitti'], 'stringit')
+output: gorceixiitti
+(['milleriitti', 'granaatti', 'alppihiihto', 'rodoniitti', 'uvaroviitti', 'pyrokseeni'], 'alppihiihto')
+output: alppihiihto
+(['pikivälke', 'hessiitti', 'datoliitti', 'sylviini', 'aleksandriitti', 'kungfutse'], 'kungfutse')
+output: pikivälke
+(['aventurniimaasälpä', 'zinnwaldiitti', 'milariitti', 'opaali', 'atsuriitti', 'nopeuslasku'], 'nopeuslasku')
+output: aventurniimaasälpä
+(['moriniitti', 'ametisti', 'serisiitti', 'totemismi', 'lasuriitti', 'adamiitti'], 'totemismi')
+output: totemismi
+(['hauyniitti', 'jalo-opaali', 'montmorriloniitti', 'uimapuku', 'epidootti', 'proustiitti'], 'uimapuku')
+output: uimapuku
+(['kuparihohde', 'idokraasi', 'amatsoniitti', 'reikki', 'kalsedoni', 'argentiitti'], 'reikki')
+output: kalsedoni
+(['hypersteeni', 'muskoviitti', 'linneiitti', 'ryhmäesimies', 'rutiili', 'limoniitti'], 'ryhmäesimies')
+output: rutiili
+(['armalkoliitti', 'kulttuurivälittäjä', 'spessartiini', 'serusiitti', 'brauniitti', 'gahniitti'], 'kulttuurivälittäjä')
+output: brauniitti
+(['manganiitti', 'kloriitti', 'frankliniitti', 'limsiö', 'wendigo', 'glaukoniitti'], 'wendigo')
+output: limsiö
+(['opaali', 'rodoliitti', 'jalo-opaali', 'meripihka', 'sortsit', 'tiikerinsilmä'], 'sortsit')
+output: meripihka
+(['karnotiitti', 'pyrofylliitti', 'willemiitti', 'atakamiitti', 'kryoliitti', 'kiivi'], 'kiivi')
+output: kiivi
+(['sodaliitti', 'sinoperi', 'karnotiitti', 'autuniitti', 'libanon', 'smaliitti'], 'libanon')
+output: libanon
+(['ramsayiitti', 'esteratsastus', 'anataasi', 'sinikvartsi', 'pyrokseeni', 'kabasiitti'], 'esteratsastus')
+output: pyrokseeni
+(['akaattiopaali', 'turkoosi', 'binghamiitti', 'antimonihohde', 'huivi', 'nefriitti-kissansilmä'], 'huivi')
+output: huivi
+(['sepioliitti', 'aventurniimaasälpä', 'osumiliitti', 'glauberiitti', 'sarvivälke', 'sapodilla'], 'sapodilla')
+output: aventurniimaasälpä
+(['nakriitti', 'aleksandriitti', 'zinnwaldiitti', 'atsuriitti', 'ääretön', 'spodumeeni'], 'ääretön')
+output: ääretön
+(['pikivälke', 'vuorikide', 'löllingiitti', 'herkyniitti', 'wolframiitti', 'passionhedelmä'], 'passionhedelmä')
+output: wolframiitti
+(['limsiö', 'isohiirenhäntälepakko', 'tina', 'sarvivälke', 'sammalakaatti', 'rikki'], 'isohiirenhäntälepakko')
+output: limsiö
+(['gersdorffiitti', 'asbesti', 'uraliitti', 'singapore', 'tansaniitti', 'serusiitti'], 'singapore')
+output: singapore
+N of tasks: 20, correct: 8 (40.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_mythical_creatures.txt
+(['kääpiö', 'skylla', 'merenneito', 'yhtäsuuruus', 'ihmiskissa', 'ukkoslintu'], 'yhtäsuuruus')
+output: kääpiö
+(['peikko', 'feeniks', 'akropapuloosi', 'minotauros', 'harpyija', 'balrog'], 'akropapuloosi')
+output: balrog
+(['nessie', 'boogeyman', 'iku-turso', 'traakki', 'metsänneitsyt', 'violetti'], 'violetti')
+output: iku-turso
+(['metsänneitsyt', 'leviatan', 'banshee', 'vampyyri', 'noita', 'ihmistiikeri'], 'noita')
+output: metsänneitsyt
+(['vuorenpeikko', 'noita', 'ukkoslintu', 'kummitus', 'hiisi', 'ukkoslintu'], 'ukkoslintu')
+output: ukkoslintu
+(['rok-lintu', 'menninkäinen', 'khimaira', 'riukiunkaniini', 'mantikori', 'kalevanpojat'], 'riukiunkaniini')
+output: khimaira
+(['seireeni', 'noita', 'aarnikotka', 'kalevanpojat', 'rok-lintu', 'kompleksiluvut'], 'kompleksiluvut')
+output: kalevanpojat
+(['vampyyri', 'khimaira', 'luonnonhenki', 'jotuni', 'balrog', 'kuriiri'], 'kuriiri')
+output: balrog
+(['piru', 'lohikäärme', 'hiisi', 'syöjätär', 'pääsiäispupu', 'rubidium'], 'rubidium')
+output: rubidium
+(['näkki', 'jeti', 'algeria', 'sfinksi', 'ghoul', 'kalevanpojat'], 'algeria')
+output: kalevanpojat
+(['banshee', 'hiisi', 'metsänneitsyt', 'isabella', 'sfinksi', 'kalevanpojat'], 'isabella')
+output: metsänneitsyt
+(['vetehinen', 'seireeni', 'noita', 'näkki', 'amerikium', 'aarnikotka'], 'amerikium')
+output: aarnikotka
+(['tonttu', 'haiti', 'jotuni', 'chupacabra', 'skylla', 'gogmagog'], 'haiti')
+output: chupacabra
+(['zombi', 'xanthoma', 'skylla', 'nessie', 'ghoul', 'pääsiäispupu'], 'xanthoma')
+output: zombi
+(['hydra', 'itseisarvo', 'menninkäinen', 'keijukainen', 'rok-lintu', 'noita'], 'itseisarvo')
+output: rok-lintu
+(['ghoul', 'ihmiskissa', 'feeniks', 'hammaskeiju', 'sukka', 'fauni'], 'sukka')
+output: feeniks
+(['syöjätär', 'basiliski', 'desklosiitti', 'kummitus', 'hammaspeikko', 'skylla'], 'desklosiitti')
+output: skylla
+(['leviatan', 'maahinen', 'keijukainen', 'ytterbium', 'ghoul', 'fenris'], 'ytterbium')
+output: ytterbium
+(['ukkoslintu', 'ihmiskissa', 'ghoul', 'dryadi', 'monismi', 'syöjätär'], 'monismi')
+output: dryadi
+(['joulupukki', 'lohikäärme', 'isojalka', 'kääpiö', 'pääsiäispupu', 'teal'], 'teal')
+output: kääpiö
+N of tasks: 20, correct: 3 (15.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_philosophers.txt
+(['heidegger', 'popper', 'wittgenstein', 'laotse', 'rousseau', 'guyana'], 'guyana')
+output: rousseau
+(['monoteismi', 'ksenofanes', 'horkheimer', 'protagoras', 'dionysios', 'macintyre'], 'monoteismi')
+output: ksenofanes
+(['averroes', 'gadamer', 'kalifornium', 'thales', 'pyrrhon', 'macintyre'], 'kalifornium')
+output: kalifornium
+(['gadamer', 'heidegger', 'popper', 'herakleitos', 'kant', 'vihreä'], 'vihreä')
+output: heidegger
+(['derrida', 'nietzsche', 'locke', 'smaragdinvihreä', 'peirce', 'zenon'], 'smaragdinvihreä')
+output: peirce
+(['kant', 'engels', 'pseudo-dionysios', 'diteismi', 'wittgenstein', 'al-kindi'], 'diteismi')
+output: pseudo-dionysios
+(['heidegger', 'peirce', 'laotse', 'osajoukko', 'avicenna', 'al-kindi'], 'osajoukko')
+output: peirce
+(['laotse', 'bentham', 'yhteenlasku', 'marx', 'kungfutse', 'descartes'], 'yhteenlasku')
+output: bentham
+(['hume', 'platon', 'macintyre', 'laotse', 'kant', 'epikuros'], 'epikuros')
+output: macintyre
+(['pseudo-dionysios', 'rastafari', 'schopenhauer', 'ksenofanes', 'diogenes', 'leukippos'], 'rastafari')
+output: leukippos
+(['horkheimer', 'nietzsche', 'keuhkoastma', 'chydenius', 'pseudo-dionysios', 'popper'], 'keuhkoastma')
+output: pseudo-dionysios
+(['rousseau', 'aristoteles', 'lyijyhohde', 'empeirikos', 'wittgenstein', 'laotse'], 'lyijyhohde')
+output: rousseau
+(['diogenes', 'sokrates', 'dionysios', 'engels', 'piemontiitti', 'ksenofanes'], 'piemontiitti')
+output: dionysios
+(['chydenius', 'parmenides', 'colemaniitti', 'foucault', 'platon', 'aristoteles'], 'colemaniitti')
+output: foucault
+(['empeirikos', 'schopenhauer', 'outokumpu', 'machiavelli', 'kungfutse', 'al-razi'], 'outokumpu')
+output: schopenhauer
+(['meripihka', 'arendt', 'averroes', 'epiktetos', 'leibniz', 'platon'], 'meripihka')
+output: leibniz
+(['pythagoras', 'kastanja', 'adorno', 'hume', 'gadamer', 'wittgenstein'], 'kastanja')
+output: adorno
+(['beauvoir', 'heidegger', 'parmenides', 'berkeley', 'kirsikkaluumu', 'al-kindi'], 'kirsikkaluumu')
+output: beauvoir
+(['parmenides', 'diogenes', 'laotse', 'platon', 'ksenofanes', 'lime'], 'lime')
+output: ksenofanes
+(['hobbes', 'leibniz', 'protagoras', 'derrida', 'schopenhauer', 'diteismi'], 'diteismi')
+output: hobbes
+N of tasks: 20, correct: 1 (5.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_poker_terms.txt
+(['river', 'kypros', 're-buy', 'showdown', 'sivupotti', 'saletit'], 'kypros')
+output: showdown
+(['potti', 'alba', 'avopokeri', 'showdown', 'jokeri', 'freezeout'], 'alba')
+output: showdown
+(['setti', 'sököttää', 'monismi', 'korottaa', 're-buy', 'kikkeri'], 'monismi')
+output: re-buy
+(['semibluffi', 'floppi', 'heads-up', 'positio', 'nutsit', 'jokeri'], 'jokeri')
+output: heads-up
+(['kikkeri', 'hanko', 'outit', 'passata', 'suittarit', 'all-in'], 'hanko')
+output: outit
+(['jakajannappi', 'sököttää', 'adorno', 'passata', 'potti', 'positio'], 'adorno')
+output: adorno
+(['heads-up', 'turni', 'floppi', 'blindi', 'filippiinienpiikkisika', 'korottaa'], 'filippiinienpiikkisika')
+output: heads-up
+(['reikki', 'peikko', 'sokkopanos', 'kikkeri', 'positio', 'heads-up'], 'peikko')
+output: heads-up
+(['betsata', 'showdown', 'laotse', 'kikkeri', 'suittarit', 'limittipokeri'], 'laotse')
+output: showdown
+(['hooli', 'avopokeri', 'river', 'projekti-insinööri', 'kipata', 'suittarit'], 'projekti-insinööri')
+output: projekti-insinööri
+(['setti', 'korottaa', 'passata', 'sivupotti', 'huivi', 'kikkeri'], 'huivi')
+output: huivi
+(['heads-up', 'beige', 'avopokeri', 'hooli', 'turni', 'sisäänosto'], 'beige')
+output: beige
+(['potti', 'checkata', 'add-on', 'hooli', 'sokrates', 'jakajannappi'], 'sokrates')
+output: add-on
+(['passata', 'kipata', 'cicero', 'alkupanos', 'nutsit', 'tiltata'], 'cicero')
+output: cicero
+(['vetokäsi', 'bluffi', 'annoona', 'suittarit', 'potti', 'nutsit'], 'annoona')
+output: bluffi
+(['juovakenguru', 'turni', 'vetokäsi', 'potti', 'jakajannappi', 'alkupanos'], 'juovakenguru')
+output: vetokäsi
+(['korottaa', 'blindi', 'outit', 'semibluffi', 'sisäänosto', 'vety'], 'vety')
+output: semibluffi
+(['all-in', 'checkata', 'tamarillo', 'suittarit', 'sokkopanos', 'setti'], 'tamarillo')
+output: checkata
+(['limittipokeri', 'avopokeri', 'sisäänosto', 'turni', 'setti', 'passata'], 'setti')
+output: turni
+(['positio', 'turni', 'jakajannappi', 'kipata', 'cheerleading', 'check-reissu'], 'cheerleading')
+output: check-reissu
+N of tasks: 20, correct: 5 (25.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_professions.txt
+(['junasuorittaja', 'yrityslakimies', 'oulu', 'asiakaspalveluinsinööri', 'kirjastonhoitaja', 'vanginvartija'], 'oulu')
+output: asiakaspalveluinsinööri
+(['musiikinopettaja', 'kriitikko', 'paita', 'mainosyrittäjä', 'kansanedustaja', 'urheiluvalmentaja'], 'paita')
+output: urheiluvalmentaja
+(['ympäristönsuojelusihteeri', 'leibniz', 'suunnittelupäällikkö', 'tutkijainsinööri', 'sihteeri', 'atk-päällikkö'], 'leibniz')
+output: leibniz
+(['monistaja', 'ympäristönsuojelutarkastaja', 'kuvanauhoittaja', 'keittiöpäällikkö', 'fluori', 'lääketyöntekijä'], 'fluori')
+output: lääketyöntekijä
+(['kuriiri', 'tuholaistorjuja', 'päiväkotiapulainen', 'farmaseutti', 'palkanlaskija', 'järvisyyhy'], 'järvisyyhy')
+output: järvisyyhy
+(['mekaniikkasuunnittelija', 'tarkastusinsinööri', 'käsikirjoittaja', 'kalevanpojat', 'apteekkari', 'käyttöinsinööri'], 'kalevanpojat')
+output: kalevanpojat
+(['piispa', 'viro', 'terveyskeskuspsykologi', 'isännöitsijä', 'juotostarkastaja', 'tradenomi'], 'viro')
+output: isännöitsijä
+(['lehtori', 'arkeologi', 'satiaiset', 'matkailutiedottaja', 'astrologi', 'kartoittaja'], 'satiaiset')
+output: arkeologi
+(['elinkeinoasiamies', 'kalajoki', 'huoltopäällikkö', 'räätäli', 'suuhygienisti', 'malli'], 'kalajoki')
+output: huoltopäällikkö
+(['huoltoasematyöntekijä', 'jalkojenhoitaja', 'appelsiini', 'kotitalousopettaja', 'puheterapeutti', 'ohjelmoija'], 'appelsiini')
+output: huoltoasematyöntekijä
+(['viemärisukeltaja', 'pusero', 'merkonomi', 'asiakaspalveluinsinööri', 'vaatesuunnittelija', 'sosiaaliohjaaja'], 'pusero')
+output: asiakaspalveluinsinööri
+(['yrityslakimies', 'rehtori', 'toimistovirkailija', 'mänkimies', 'yhteisöpedagogi', 'lila'], 'lila')
+output: yhteisöpedagogi
+(['tuholaistorjuja', 'elinkeinoasiamies', 'nymfi', 'tullaaja', 'raskaskalustoasentaja', 'myyjä'], 'nymfi')
+output: myyjä
+(['isännöitsijä', 'kriitikko', 'lukkoseppä', 'haudankaivaja', 'huoltoinsinööri', 'panostaja'], 'panostaja')
+output: haudankaivaja
+(['pastori', 'säveltäjä', 'purseri', 'lihanleikkaaja', 'hallintolakimies', 'unitarismi'], 'unitarismi')
+output: säveltäjä
+(['maatalouslomittaja', 'zimbabwe', 'linja-autonkuljettaja', 'henkilöstökonsultti', 'agronomi', 'sairaanhoitaja'], 'zimbabwe')
+output: zimbabwe
+(['savenvalaja', 'markkinointipäällikkö', 'laboratorionhoitaja', 'kikimora', 'taksitarkastaja', 'monistaja'], 'kikimora')
+output: savenvalaja
+(['näyttelijä', 'oikolukija', 'lennonjohtaja', 'kirjanpitäjä', 'kongruenssirelaatio', 'kuluttajaneuvoja'], 'kongruenssirelaatio')
+output: oikolukija
+(['hautakivisuunnittelija', 'tanssija', 'alumiini', 'siirtoinsinööri', 'agrologi', 'voimalaitospäällikkö'], 'alumiini')
+output: agrologi
+(['valokuvamalli', 'merimies', 'mikrotukihenkilö', 'eläintenhoitaja', 'nestoriolaisuus', 'teollisuusapumies'], 'nestoriolaisuus')
+output: eläintenhoitaja
+N of tasks: 20, correct: 4 (20.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_religions.txt
+(['koptilaisuus', 'ismailiitit', 'gelugpa', 'pikivälke', 'monismi', 'urantia-kirja'], 'pikivälke')
+output: gelugpa
+(['jehovan', 'koptilaisuus', 'uuspakanuus', 'evankelikaalisuus', 'tekijäryhmä', 'vapaakirkollisuus'], 'tekijäryhmä')
+output: jehovan
+(['aivoverenvuoto', 'manikealaisuus', 'gnostilaisuus', 'amishit', 'jedismi', 'skientologia'], 'aivoverenvuoto')
+output: amishit
+(['setiläisyys', 'river', 'umbanda', 'saddukeukset', 'pietismi', 'samkhya'], 'river')
+output: setiläisyys
+(['akropapuloosi', 'druidismi', 'totemismi', 'sikhiläisyys', 'ortodoksijuutalaisuus', 'krishna-liike'], 'akropapuloosi')
+output: druidismi
+(['totemismi', 'meitnerium', 'setiläisyys', 'mysteeriuskonto', 'monismi', 'mithralaisuus'], 'meitnerium')
+output: meitnerium
+(['totemismi', 'santeria', 'šiialaisuus', 'druidismi', 'hasidismi', 'argentiitti'], 'argentiitti')
+output: druidismi
+(['zarathustralaisuus', 'farisealaiset', 'gelugpa', 'khalsa', 'norja', 'pakanuus'], 'norja')
+output: khalsa
+(['suufilaisuus', 'pythagoralaisuus', 'carvaka', 'monismi', 'kaasukuolio', 'sikhiläisyys'], 'kaasukuolio')
+output: sikhiläisyys
+(['vapaakirkollisuus', 'koptilaisuus', 'protestanttisuus', 'jehovan', 'suomenusko', 'svetambara'], 'protestanttisuus')
+output: jehovan
+(['wicca', 'zen', 'vajrayana', 'aktinoliitti', 'körttiläisyys', 'ortodoksijuutalaisuus'], 'aktinoliitti')
+output: körttiläisyys
+(['uuspakanuus', 'mormonismi', 'turkoosi', 'bön', 'selootit', 'rastafari'], 'turkoosi')
+output: bön
+(['adventismi', 'uuspakanuus', 'santeria', 'jehovan', 'pakanuus', 'tuberkuloosi'], 'tuberkuloosi')
+output: adventismi
+(['gnostilaisuus', 'candomblé', 'agility', 'lestadiolaisuus', 'suomenusko', 'skientologia'], 'agility')
+output: candomblé
+(['suufilaisuus', 'hutteriitit', 'liechtenstein', 'monoteismi', 'taolaisuus', 'evankelisuus'], 'liechtenstein')
+output: liechtenstein
+(['mithralaisuus', 'wicca', 'druusilaisuus', 'samkhya', 'outit', 'selootit'], 'outit')
+output: wicca
+(['banshee', 'digambara', 'taolaisuus', 'evankelikaalisuus', 'panteismi', 'pakanuus'], 'banshee')
+output: digambara
+(['baptismi', 'panteismi', 'evankelikaalisuus', 're-buy', 'satanismi', 'skientologia'], 're-buy')
+output: re-buy
+(['setiläisyys', 'mithralaisuus', 'druidismi', 'adventismi', 'hydra', 'kagyupa'], 'hydra')
+output: adventismi
+(['senegal', 'krishna-liike', 'buddhalaisuus', 'ortodoksijuutalaisuus', 'vapaakirkollisuus', 'juutalaisuus'], 'senegal')
+output: senegal
+N of tasks: 20, correct: 4 (20.00%), tasks with OOV: 0
+
+
+Intrusion task using the data in:data\eval\FinSemEvl\FinSemEvl\intrusion\INTR_sports.txt
+(['verkkopallo', 'ammunta', 'ampumahiihto', 'jääkiipeily', 'hooli', 'lentopallo'], 'hooli')
+output: jääkiipeily
+(['hurling', 'moottorikelkkailu', 'kenttäratsastus', 'shakki', 'peru', 'judo'], 'peru')
+output: shakki
+(['kriketti', 'gnostilaisuus', 'köydenveto', 'hiihto', 'uppopallo', 'ultimate'], 'gnostilaisuus')
+output: köydenveto
+(['vesipallo', 'mango', 'racquetball', 'pesäpallo', 'paini', 'pöytätennis'], 'mango')
+output: racquetball
+(['squash', 'sosionomi', 'pyöräsuunnistus', 'rullakiekko', 'leijahiihto', 'koirajuoksu'], 'sosionomi')
+output: squash
+(['kroketti', 'ratsastus', 'duathlon', 'kiwano', 'laskettelu', 'vikellys'], 'kiwano')
+output: duathlon
+(['ratapyöräily', 'australialainen', 'laukkaurheilu', 'sumopaini', 'softball', 'sammalopaali'], 'sammalopaali')
+output: softball
+(['tikkajuoksu', 'frisbeegolf', 'nyrkkipallo', 'ammunta', 'jääpallo', 'laivastonsininen'], 'laivastonsininen')
+output: frisbeegolf
+(['potkunyrkkeily', 'ringette', 'pseudomonaskynsi', 'laskuvarjourheilu', 'leuanveto', 'tanssiurheilu'], 'pseudomonaskynsi')
+output: potkunyrkkeily
+(['go', 'lumilautailu', 'uimahypyt', 'pelota', 'arendt', 'softball'], 'arendt')
+output: softball
+(['hurling', 'rantalentopallo', 'atk-suunnittelija', 'kaukalojääpallo', 'moottoriveneily', 'footbag'], 'atk-suunnittelija')
+output: footbag
+(['capoeira', 'lainelautailu', 'alppihiihto', 'rullaluistelu', 'loiasis-tauti', 'squash'], 'loiasis-tauti')
+output: capoeira
+(['koripallo', 'koirahiihto', 'näytösvoimistelu', 'shakkinyrkkeily', 'kroketti', 'parainen'], 'parainen')
+output: shakkinyrkkeily
+(['australialainen', 'kaukalopallo', 'suunnistus', 'potkunyrkkeily', 'linneiitti', 'eukonkanto'], 'linneiitti')
+output: potkunyrkkeily
+(['paini', 'rullapallo', 'nivelreuma', 'potkupyöräily', 'ilmailu', 'racquets'], 'nivelreuma')
+output: potkupyöräily
+(['akrobatiavoimistelu', 'kenttäratsastus', 'kaukalopallo', 'njala', 'matkaratsastus', 'muodostelmaluistelu'], 'njala')
+output: njala
+(['kaukalopikaluistelu', 'kaukalopallo', 'rutiili', 'poolo', 'lännenratsastus', 'moottorikelkkailu'], 'rutiili')
+output: poolo
+(['autourheilu', 'leijahiihto', 'shakki', 'protaktinium', 'jääpallo', 'ilmailu'], 'protaktinium')
+output: protaktinium
+(['kouluratsastus', 'potkupyöräily', 'pöytätennis', 'valjakkohiihto', 'taolaisuus', 'kendō'], 'taolaisuus')
+output: potkupyöräily
+(['potkulautailu', 'raviurheilu', 'taido', 'nurmikeilailu', 'kalajoki', 'kouluratsastus'], 'kalajoki')
+output: raviurheilu
+N of tasks: 20, correct: 2 (10.00%), tasks with OOV: 0
+
+
+Total scores in intrusion task:
+N of tasks: 320, correct: 58 (18.12%), tasks with OOV: 0
+
+Analogy task using the data in:data\eval\FinSemEvl\FinSemEvl\analogy\ANA_antonymic_adjectives.txt
+N of lines: 182, correct: 0 (0.00%), lines with OOV: 0
+
+Analogy task using the data in:data\eval\FinSemEvl\FinSemEvl\analogy\ANA_capital-country.txt
+N of lines: 380, correct: 0 (0.00%), lines with OOV: 0
+
+Analogy task using the data in:data\eval\FinSemEvl\FinSemEvl\analogy\ANA_cardinal-ordinal_numbers.txt
+N of lines: 110, correct: 1 (0.91%), lines with OOV: 0
+
+Analogy task using the data in:data\eval\FinSemEvl\FinSemEvl\analogy\ANA_country-currency.txt
+N of lines: 90, correct: 0 (0.00%), lines with OOV: 0
+
+Analogy task using the data in:data\eval\FinSemEvl\FinSemEvl\analogy\ANA_female-male.txt
+N of lines: 132, correct: 0 (0.00%), lines with OOV: 0
+
+Analogy task using the data in:data\eval\FinSemEvl\FinSemEvl\analogy\ANA_hockeyTeam-city.txt
+N of lines: 72, correct: 0 (0.00%), lines with OOV: 0
+
+Analogy task using the data in:data\eval\FinSemEvl\FinSemEvl\analogy\ANA_orthogonal_directions.txt
+N of lines: 71, correct: 0 (0.00%), lines with OOV: 0
+
+Total scores in analogy task:
+N of lines: 1037, correct: 1 (0.10%), lines with OOV: 0 (0.00%)
+
+Nearest neighbours using the data in:data\eval\nearest_neighbor_wordlist.csv
+('word:', 'koira', 'nearest neighbour:', [('–', 0.6898579001426697), ('1', 0.6814391613006592), ('Ii', 0.6802295446395874), ('9', 0.6799250245094299), ('ei', 0.6792553663253784), ('4.', 0.6792078614234924), ('Pelé', 0.6791863441467285), ('5', 0.6789937019348145), ('Pelén', 0.6787678599357605), ('Sam', 0.6782405376434326)])
+('word:', 'hevonen', 'nearest neighbour:', [('%', 0.8499650359153748), ('John', 0.8487080931663513), ('*', 0.8485311269760132), ('18.', 0.8483436107635498), (')', 0.8481802940368652), ('34', 0.8480477333068848), ('usea', 0.8479315042495728), ('4.', 0.8478860855102539), (',', 0.8478447198867798), ('del', 0.8478071689605713)])
+('word:', 'ankka', 'nearest neighbour:', [('kotona', 0.8712316751480103), ('*', 0.8710554242134094), ('15', 0.8706645369529724), ('10', 0.8705046772956848), ('apu', 0.8704174160957336), (',', 0.8703832030296326), ('MAYDAY', 0.8703310489654541), ('aika', 0.8703103065490723), ('sana', 0.8701683282852173), ('maa', 0.8701233863830566)])
+('word:', 'kotka', 'nearest neighbour:', [('2', 0.8413695096969604), ('I', 0.8413212895393372), ('4', 0.8395060896873474), ('se', 0.8390947580337524), ('18.', 0.8390547037124634), ('Lennox', 0.8390066623687744), ('MAYDAY', 0.8389550447463989), ('ei', 0.8389500379562378), ('lause', 0.8389014005661011), ('120', 0.8388916254043579)])
+('word:', 'kissa', 'nearest neighbour:', [(')', 0.8574805855751038), ('i', 0.8530073165893555), ('s.', 0.8521057367324829), ('8', 0.8516913056373596), ('2.', 0.8511612415313721), ('de', 0.8507553339004517), ('1958', 0.8506669402122498), ('10', 0.8506220579147339), ('120', 0.8497989177703857), ('1.', 0.8497528433799744)])
+('word:', 'leijona', 'nearest neighbour:', [('1.', 0.8961607813835144), ('1', 0.8958708047866821), ('.', 0.8958683013916016), ('15', 0.895211398601532), ('*', 0.8951057195663452), ('av', 0.8950559496879578), ('Anna', 0.894905686378479), ('tärkeä', 0.8948582410812378), ('suoraan', 0.8947666883468628), ('uskoa', 0.894722044467926)])
+('word:', 'hiiri', 'nearest neighbour:', [('3', 0.9708179831504822), ('USA', 0.969944953918457), ('Ii', 0.9697036147117615), ('1921', 0.9695629477500916), (':', 0.9695520997047424), ('Thomas', 0.9695109128952026), ('syy', 0.9694611430168152), ('Of', 0.9694367051124573), ('hallinto', 0.9693773984909058), ('pyytää', 0.9693563580513)])
+('word:', 'karhu', 'nearest neighbour:', [('18.', 0.6945672035217285), (',', 0.6942826509475708), ('*', 0.6938712000846863), ('4.', 0.693560779094696), ('-', 0.6931594610214233), ('syy', 0.6930211782455444), ('oma', 0.692864179611206), ('vastata', 0.6926881074905396), ('000', 0.6926791667938232), ('katsoa', 0.6926730871200562)])
+('word:', 'susi', 'nearest neighbour:', [('/', 0.8677114248275757), ('av', 0.867511510848999), ('32', 0.8674243688583374), ('s.', 0.8667525053024292), ('2002', 0.8660250902175903), ('kausi', 0.865980327129364), ('lause', 0.865704357624054), ('laulu', 0.8655958771705627), ('Henry', 0.865594744682312), ('2005', 0.8655749559402466)])
+('word:', 'lammas', 'nearest neighbour:', [('I', 0.9244644045829773), ('ja', 0.9232393503189087), ('tämä', 0.9223304390907288), ('von', 0.9222908616065979), ('USA', 0.9220641851425171), ('sanoa', 0.9220350980758667), ('Matrix', 0.9220272898674011), ('yli', 0.9220162630081177), ('-', 0.9220115542411804), ('*', 0.9218801856040955)])
+('word:', 'pää', 'nearest neighbour:', [('120', 0.946571946144104), ('John', 0.9464621543884277), ('aika', 0.9464002847671509), ('del', 0.9463685750961304), ('Hot', 0.9463629126548767), ('Mayday', 0.9463100433349609), ('yhä', 0.9462842345237732), ('muassa', 0.9462790489196777), ('8', 0.9462767839431763), ('kirja', 0.9462313055992126)])
+('word:', 'käsi', 'nearest neighbour:', [(')', 0.7451106309890747), ('(', 0.7391901612281799), ('8', 0.7372181415557861), ('USA', 0.736484944820404), ('Lennox', 0.7363290786743164), ('tila', 0.7358137965202332), ('120', 0.7356833815574646), ('Rooma', 0.7356340885162354), ('Ii', 0.7356230616569519), ('1958', 0.7355143427848816)])
+('word:', 'silmä', 'nearest neighbour:', [('i', 0.9348686337471008), ('Of', 0.9329507946968079), ('John', 0.9328274726867676), ('/', 0.9325463771820068), (':', 0.9322898387908936), ('suoraan', 0.9321779012680054), ('1998', 0.9320014715194702), ('liiga', 0.931989312171936), ('osa', 0.9319808483123779), ('Sibley', 0.9319223165512085)])
+('word:', 'jalka', 'nearest neighbour:', [('eli', 0.9875966906547546), ('vuosi', 0.9875744581222534), ('viisi', 0.9875686168670654), ('euro', 0.9875581860542297), ('tunneli', 0.9875544905662537), ('1932', 0.9875509738922119), ('tunnettu', 0.9875452518463135), ('Stormin', 0.9875434041023254), ('1962', 0.987534761428833), ('Lennox', 0.9875200986862183)])
+('word:', 'hius', 'nearest neighbour:', [(')', 0.6283047795295715), ('–', 0.6240651607513428), ('8', 0.6234844326972961), ('-', 0.6233957409858704), ('7', 0.6231442093849182), ('Of', 0.6222195625305176), ('4.', 0.6217219829559326), (';', 0.6214136481285095), ('Hawkwind', 0.6213879585266113), ('tuhat', 0.621279239654541)])
+('word:', 'korva', 'nearest neighbour:', [('John', 0.9759119749069214), ('se', 0.9758497476577759), ('kuten', 0.975764811038971), ('ongelma', 0.9757498502731323), ('23.', 0.975740373134613), ('jopa', 0.9757202863693237), ('7', 0.9757173657417297), ('kutsua', 0.97569340467453), ('Mayday', 0.9756506085395813), ('muassa', 0.9756370782852173)])
+('word:', 'suu', 'nearest neighbour:', [('%', 0.9553732872009277), ('1', 0.9538500905036926), ('3', 0.9529440999031067), ('av', 0.9526088833808899), ('(', 0.9524765014648438), ('ura', 0.9521620869636536), ('mm', 0.9521465301513672), ('4.', 0.9520865082740784), ('15', 0.9520446062088013), ('etelä', 0.9518012404441833)])
+('word:', 'selkä', 'nearest neighbour:', [('1.', 0.7420552968978882), ('15', 0.7418506145477295), ('MAYDAY', 0.7416759729385376), ('4.', 0.7414497137069702), ('-', 0.74137943983078), (';', 0.7412434816360474), ('000', 0.7411614060401917), ('itä', 0.7410379648208618), ('18', 0.7409400939941406), ('tila', 0.7405235767364502)])
+('word:', 'sormi', 'nearest neighbour:', [('4.', 0.8727362751960754), ('1', 0.8693416118621826), (',', 0.868872880935669), ('”', 0.8688548803329468), ('34', 0.8685989379882812), ('-', 0.8685630559921265), ('10', 0.8684245347976685), ('joku', 0.8681604862213135), ('23.', 0.8681604266166687), ('2008', 0.8680915236473083)])
+('word:', 'nenä', 'nearest neighbour:', [('7', 0.8089882135391235), ('4.', 0.8080689311027527), ('MAYDAY', 0.8072340488433838), (',', 0.8067237138748169), ('ottaa', 0.8059663772583008), ('Maa', 0.8058432936668396), ('revyy', 0.8057647943496704), ('erottaa', 0.8057585954666138), ('Fidel', 0.8057330846786499), ('ilmoittaa', 0.8056904673576355)])
+('word:', 'kirkko', 'nearest neighbour:', [('tarkka', 0.9999374747276306), ('historia', 0.9999373555183411), ('maa|ilman|mestaruus', 0.9999371767044067), ('vastustaja', 0.9999370574951172), ('maa|ilman|sota', 0.9999359250068665), ('maa|ilma', 0.9999347925186157), ('Hindenburgin', 0.9999345541000366), ('joukko', 0.9999332427978516), ('poliittinen', 0.9999310374259949), ('allekirjoittaa', 0.9999303817749023)])
+('word:', 'koulu', 'nearest neighbour:', [('koulutus', 0.9914297461509705), ('piiri', 0.9913018941879272), ('Kristus', 0.991296648979187), ('pallo', 0.9912391901016235), ('ongelma', 0.9912326335906982), ('1930', 0.9912285804748535), ('lapsuus', 0.9912163615226746), ('voitto', 0.9912129640579224), ('asema', 0.9912054538726807), ('yli|oppilas|kunta', 0.9911916255950928)])
+('word:', 'kylä', 'nearest neighbour:', [('–', 0.9059876203536987), ('*', 0.9033403992652893), (':', 0.9028463363647461), ('s.', 0.9027966260910034), ('23.', 0.9027762413024902), ('apu', 0.9025945663452148), ('.', 0.9024724960327148), ('lause', 0.9024004340171814), ('/', 0.9023499488830566), ('jos', 0.9023416638374329)])
+('word:', 'tehdas', 'nearest neighbour:', [('I', 0.8871417045593262), ('5', 0.8868134021759033), ('2.', 0.8860853910446167), ('1', 0.8858750462532043), ('Pekka', 0.8852170705795288), ('/', 0.8852014541625977), ('lordi', 0.8851487636566162), ('Sam', 0.8851362466812134), ('kotona', 0.8850724697113037), ('euro', 0.8850486278533936)])
+('word:', 'linna', 'nearest neighbour:', [('yrittää', 0.9999505281448364), ('vallan|kumous', 0.999947190284729), ('vallan|kumouksellinen', 0.9999468922615051), ('kannattaja', 0.9999455213546753), ('kansain|välinen', 0.9999455213546753), ('funktionaalinen', 0.9999449253082275), ('taistella', 0.9999428987503052), ('keisarinna', 0.9999428987503052), ('suunnitella', 0.9999414086341858), ('järjestää', 0.999941349029541)])
+('word:', 'silta', 'nearest neighbour:', [('1.', 0.9119813442230225), ('1940', 0.9108816385269165), ('ja', 0.9107550382614136), ('joku', 0.9106898307800293), ('.', 0.9106894731521606), ('Pelén', 0.9106361269950867), ('peso', 0.9106087684631348), ('Karl', 0.9105821847915649), ('kappale', 0.9105753302574158), ('Mayday', 0.9105449914932251)])
+('word:', 'museo', 'nearest neighbour:', [('i', 0.804792046546936), ('%', 0.8046187162399292), ('000', 0.80399090051651), ('*', 0.8037502765655518), ('isä', 0.8036229610443115), ('34', 0.8034583330154419), ('.', 0.8034186959266663), ('USA', 0.8028650879859924), ('32', 0.8027898669242859), ('mm', 0.8027160167694092)])
+('word:', 'kirjasto', 'nearest neighbour:', [('muu', 0.9831769466400146), ('Otto', 0.9831622242927551), ('%', 0.9830378293991089), ('usea', 0.9830248355865479), ('jäsen', 0.98298579454422), ('liiga', 0.9829840660095215), ('muassa', 0.9829709529876709), ('liike', 0.982947051525116), ('tuo', 0.9829355478286743), ('tuomita', 0.9829269647598267)])
+('word:', 'asunto', 'nearest neighbour:', [('9', 0.9193776845932007), ('2', 0.9183961153030396), ('s.', 0.917526125907898), ('23.', 0.9167959094047546), ('”', 0.9166831970214844), ('kun', 0.9165906310081482), ('pyytää', 0.916527509689331), ('5', 0.9165059328079224), ('joka', 0.9164915680885315), (')', 0.9164822697639465)])
+('word:', 'sairaala', 'nearest neighbour:', [(')', 0.8401278853416443), ('/', 0.8384392857551575), ('120', 0.8377777338027954), ('se', 0.8376337289810181), ('2004', 0.8372447490692139), ('5', 0.8371310830116272), ('Fidel', 0.8370197415351868), ('tuhat', 0.8368488550186157), ('34', 0.8368110656738281), ('lause', 0.8366997241973877)])
+('word:', 'mies', 'nearest neighbour:', [('15', 0.985177218914032), ('John', 0.9850631952285767), ('Mayday', 0.9849679470062256), ('1998', 0.9848949909210205), ('muoto', 0.9848677515983582), ('jäädä', 0.9848438501358032), ('kylmä', 0.9848385453224182), ('puhe', 0.9848365783691406), ('liiga', 0.9847946763038635), ('Castro', 0.9847884178161621)])
+('word:', 'poika', 'nearest neighbour:', [('politiikka', 0.9999296069145203), ('vallan|kumouksellinen', 0.999919593334198), ('vallan|kumous', 0.9999186992645264), ('perustus|laki', 0.9999152421951294), ('taistella', 0.9999150037765503), ('suunnitella', 0.9999145269393921), ('toiminta', 0.9999145269393921), ('perustua', 0.9999120235443115), ('taistelu', 0.9999110698699951), ('oikeusasia|mies', 0.9999104738235474)])
+('word:', 'lapsi', 'nearest neighbour:', [('yhdistää', 0.9999499320983887), ('perustus|laki', 0.9999492168426514), ('kansallinen', 0.9999462366104126), ('parlamentaarinen', 0.9999452233314514), ('oikeusasia|mies', 0.9999451637268066), ('vallan|kaappaus', 0.9999448657035828), ('järjestää', 0.9999444484710693), ('vastustaja', 0.9999442100524902), ('kommunistinen', 0.9999441504478455), ('redundanssi', 0.9999438524246216)])
+('word:', 'isä', 'nearest neighbour:', [('kautta', 0.9997767210006714), ('vaikka', 0.9997608661651611), ('vapaa', 0.9997590780258179), ('oikeus', 0.9997590184211731), ('rooli', 0.9997544288635254), ('maan|osa', 0.9997531175613403), ('laita|hyökkääjä', 0.9997506141662598), ('varsi|naisesti', 0.9997493028640747), ('nimitys', 0.9997490048408508), ('katsoja', 0.9997490048408508)])
+('word:', 'nainen', 'nearest neighbour:', [('erilainen', 0.9999747276306152), ('kansa|lainen', 0.9999743103981018), ('työläinen', 0.9999710321426392), ('jokainen', 0.9999702572822571), ('saksalainen', 0.9999685287475586), ('orgaaninen', 0.9999657869338989), ('parlamentaarinen', 0.9999656081199646), ('laillinen', 0.9999653100967407), ('ensimmäinen', 0.9999635219573975), ('toinen', 0.9999628067016602)])
+('word:', 'sotilas', 'nearest neighbour:', [('sota|korvaus', 0.999943733215332), ('kansallinen', 0.9999417066574097), ('kommunistinen', 0.9999405145645142), ('onnistua', 0.9999399185180664), ('poliittinen', 0.9999396800994873), ('parlamentaarinen', 0.9999384880065918), ('sosiaali|demokraatti', 0.9999381303787231), ('kansain|välinen', 0.999937891960144), ('osallistua', 0.9999377727508545), ('esittää', 0.9999376535415649)])
+('word:', 'äiti', 'nearest neighbour:', [('i', 0.4985393285751343), ('*', 0.49768662452697754), ('(', 0.49167245626449585), ('/', 0.49139225482940674), ('Ii', 0.4906260371208191), ('”', 0.48996442556381226), ('.', 0.489865243434906), ('s.', 0.48949140310287476), ('8', 0.4893089532852173), (',', 0.48834988474845886)])
+('word:', 'ystävä', 'nearest neighbour:', [('5', 0.9440149068832397), ('i', 0.9435997009277344), ('34', 0.9423794150352478), ('”', 0.9422045946121216), ('18.', 0.942081868648529), ('10', 0.9419466257095337), ('touko|kuu', 0.9419226050376892), ('hyvin', 0.9418440461158752), ('hyvä', 0.9418380260467529), ('vuosi', 0.9417786002159119)])
+('word:', 'vaimo', 'nearest neighbour:', [('kansallis|kokous', 0.9999278783798218), ('hiili|ketju', 0.9999268651008606), ('kansallinen', 0.999923825263977), ('varsi|naisesti', 0.999923586845398), ('kansallis|sosialistinen', 0.999923586845398), ('vastaan', 0.9999220371246338), ('esimerkiksi', 0.9999215602874756), ('kansa|lainen', 0.9999213814735413), ('vaihto|ehto', 0.9999207854270935), ('vandaali', 0.999920129776001)])
+('word:', 'tytär', 'nearest neighbour:', [('ja', 0.6907171607017517), ('(', 0.6899625658988953), ('10', 0.6898642778396606), ('8', 0.6897602081298828), ('3', 0.6896227598190308), ('Ii', 0.6887011528015137), (':', 0.6886557340621948), ('John', 0.6885395646095276), ('/', 0.6882025003433228), ('oma', 0.6881824135780334)])
+('word:', 'joki', 'nearest neighbour:', [('jokin', 0.9999557137489319), ('kannattaja', 0.9999370574951172), ('vastustaja', 0.9999350309371948), ('kannattaa', 0.9999326467514038), ('oikeusasia|mies', 0.9999324083328247), ('kaupunki', 0.9999291896820068), ('kansallinen', 0.9999290704727173), ('maa|ilman|sota', 0.9999290704727173), ('sosiaali|demokraatti', 0.9999284744262695), ('puolue', 0.9999281764030457)])
+('word:', 'saari', 'nearest neighbour:', [('saari|maa', 0.9999697208404541), ('kauppa|saarto', 0.9999614953994751), ('kansallinen', 0.9999564290046692), ('parlamentaarinen', 0.9999561905860901), ('sosiaali|demokraatti', 0.9999560713768005), ('valtio|päivä', 0.9999560713768005), ('kansallis|kokous', 0.9999551177024841), ('Brüningin', 0.9999544024467468), ('vasemmisto', 0.9999540448188782), ('dollari', 0.9999539852142334)])
+('word:', 'meri', 'nearest neighbour:', [('MAYDAY', 0.9829280376434326), ('erottaa', 0.9823895692825317), ('mutta', 0.9823625087738037), ('18.', 0.9823164939880371), ('osa', 0.9822622537612915), ('kuin', 0.9822378158569336), ('alkaa', 0.9822344183921814), ('joka', 0.9822285175323486), ('että|ei', 0.9822186827659607), ('laulu', 0.9822182059288025)])
+('word:', 'vuori', 'nearest neighbour:', [('4', 0.9740188121795654), ('Storm', 0.9733498096466064), ('isä', 0.9732121229171753), ('2008', 0.973199725151062), ('120', 0.9731859564781189), ('2003', 0.9731265902519226), ('Sam', 0.9731172323226929), ('mm', 0.973115086555481), ('kausi', 0.9729184508323669), ('1920', 0.972916841506958)])
+('word:', 'laakso', 'nearest neighbour:', [('kun', 0.9134923219680786), ('s.', 0.9130874276161194), ('siis', 0.9127850532531738), ('kotona', 0.9127686023712158), ('tämä', 0.9125884771347046), ('ostaa', 0.9125297665596008), ('olla', 0.9125162959098816), ('joka', 0.9123339056968689), ('New', 0.9123244285583496), ('koska', 0.9122925400733948)])
+('word:', 'kirja', 'nearest neighbour:', [('kirjoittaa', 0.9999319911003113), ('laaja', 0.9999281167984009), ('Rosebery', 0.9999274611473083), ('asettua', 0.9999273419380188), ('tarkka', 0.9999256730079651), ('vaikka', 0.9999253153800964), ('politiikka', 0.9999250173568726), ('miljoona', 0.9999244213104248), ('allekirjoittaa', 0.9999233484268188), ('kannattaja', 0.9999229907989502)])
+('word:', 'kuva', 'nearest neighbour:', [('1958', 0.9707443714141846), ('mm', 0.9707321524620056), ('New', 0.9707164764404297), ('1962', 0.9706348776817322), ('Pelén', 0.9704399704933167), ('de', 0.9704058766365051), ('Oseania', 0.9703933596611023), ('tunneli', 0.9703928828239441), ('1', 0.9703820943832397), ('tällöin', 0.9703800082206726)])
+('word:', 'kortti', 'nearest neighbour:', [('–', 0.8960849046707153), ('I', 0.8923312425613403), ('ja', 0.8916233777999878), ('7', 0.8915266394615173), (':', 0.8913819789886475), ('(', 0.8912959694862366), ('4', 0.8912217617034912), ('del', 0.8910214900970459), ('1', 0.8910191655158997), ('tappio', 0.8906863927841187)])
+('word:', 'pora', 'nearest neighbour:', [('”', 0.6919822096824646), ('.', 0.6900933384895325), ('F', 0.6896394491195679), (':', 0.6887264251708984), ('34', 0.6883041858673096), ('s.', 0.6882436275482178), ('2.', 0.6882253289222717), ('%', 0.6879090070724487), ('rooli', 0.6877672672271729), ('i', 0.687575101852417)])
+('word:', 'veitsi', 'nearest neighbour:', [(':', 0.8623754978179932), ('32', 0.8607831001281738), ('-', 0.8603800535202026), ('mm', 0.8600629568099976), ('”', 0.8593094348907471), ('120', 0.8590487241744995), ('Rod', 0.859041690826416), ('Sam', 0.8588870763778687), ('2005', 0.8587012887001038), ('yleis|lakko', 0.858568549156189)])
+('word:', 'vasara', 'nearest neighbour:', [('"', 0.886796236038208), ('Pekka', 0.8775009512901306), ('/', 0.8771729469299316), ('3', 0.8768289089202881), ('kotona', 0.8766248822212219), ('32', 0.8764973878860474), ('mm', 0.876398503780365), ('Ranska', 0.8759024143218994), (':', 0.8758517503738403), ('John', 0.8758506774902344)])
+('word:', 'kirves', 'nearest neighbour:', [('8', 0.8797136545181274), ('32', 0.879314661026001), ('s.', 0.8787307739257812), ('Ii', 0.8786510229110718), ('ura', 0.8776469230651855), ('Matrix', 0.8774774074554443), ('jo', 0.8774374127388), ('I', 0.8773317337036133), ('1961', 0.8773066997528076), ('1998', 0.8771998882293701)])
+('word:', 'lusikka', 'nearest neighbour:', [('–', 0.9403776526451111), (',', 0.9395840167999268), ('32', 0.9395617842674255), ('”', 0.9394444227218628), ('liiga', 0.9387427568435669), ('syöttö', 0.9387272596359253), ('loppu', 0.9386938810348511), ('syntyä', 0.9386849403381348), ('asentaa', 0.93867027759552), ('120', 0.938629150390625)])
+('word:', 'haarukka', 'nearest neighbour:', [('-', 0.9137903451919556), ('9', 0.9137839674949646), ('7', 0.9136333465576172), ('I', 0.9134770035743713), ('ongelma', 0.9133974313735962), ('itä', 0.9133690595626831), ('kotona', 0.9133379459381104), ('Zeitz', 0.9131537079811096), ('Anna', 0.9131073951721191), ('että|ei', 0.913060188293457)])
+('word:', 'kampa', 'nearest neighbour:', [('1964', 0.9868959188461304), ('Helsinki', 0.9868285059928894), ('Ebert', 0.9867808818817139), ('Hot', 0.986746072769165), ('vanha', 0.986699104309082), ('myötä', 0.986687421798706), ('osoittaa', 0.9866737723350525), ('sotilas', 0.9866549372673035), ('asema', 0.9866486191749573), ('000', 0.9866445064544678)])
+('word:', 'auto', 'nearest neighbour:', [('haamu', 0.9757016897201538), ('MAYDAY', 0.9756171703338623), ('Zeitz', 0.9755575656890869), ('2.', 0.9754296541213989), ('Karl', 0.9754173159599304), ('ei', 0.9753843545913696), ('voitto', 0.9753758311271667), ('ja', 0.9753459095954895), ('Ii', 0.9753437042236328), ('edus|kunta', 0.9752510786056519)])
+('word:', 'laiva', 'nearest neighbour:', [('7', 0.8472086191177368), ('%', 0.8458558320999146), ('s.', 0.8449041843414307), ('18.', 0.8448302745819092), ('Hot', 0.844255805015564), ('jopa', 0.8439944982528687), ('lähes', 0.8438700437545776), ('Rod', 0.8436985611915588), ('ainoa', 0.8435134887695312), ('jo', 0.8434932231903076)])
+('word:', 'juna', 'nearest neighbour:', [('3', 0.5265441536903381), ('1', 0.523838222026825), ('-', 0.5200350880622864), ('8', 0.5184522271156311), ('mm', 0.5181002020835876), ('Sam', 0.5180603861808777), ('32', 0.5180075764656067), ('se', 0.5179235935211182), ('Rod', 0.5178977251052856), ('kohde', 0.5178508162498474)])
+('word:', 'vene', 'nearest neighbour:', [('–', 0.5820225477218628), ('(', 0.5764045119285583), ('7', 0.573329508304596), ('2', 0.5724575519561768), (',', 0.5718355178833008), ('5', 0.5680175423622131), ('000', 0.566582977771759), ('vuosi', 0.5664553046226501), ('1962', 0.5661746263504028), ('Karl', 0.5660697221755981)])
+('word:', 'bussi', 'nearest neighbour:', [('3', 0.662689208984375), ('(', 0.6617317199707031), ('Ii', 0.6616717576980591), ('-', 0.6612439751625061), ('1.', 0.6610269546508789), ('9', 0.6603921055793762), ('Lauren', 0.6603400707244873), ('tuo', 0.6599366664886475), ('i', 0.659447193145752), ('2007', 0.6594321131706238)])
+('word:', 'lapanen', 'nearest neighbour:', [(';', 0.9271999001502991), ('4', 0.925714373588562), ('2003', 0.9254980087280273), ('18', 0.9254930019378662), ('yhä', 0.9254366755485535), (')', 0.925399124622345), ('18.', 0.9253144264221191), ('Anna', 0.9252227544784546), ('2008', 0.9251712560653687), ('euro', 0.9250597953796387)])
+('word:', 'pusero', 'nearest neighbour:', [('euro', 0.7996246814727783), ('5', 0.7992578744888306), ('USA', 0.7989917993545532), ('”', 0.7989624738693237), ('000', 0.7985854148864746), ('4.', 0.7984329462051392), ('10', 0.7982600331306458), ('miljardi', 0.7981175184249878), ('ja', 0.7981165051460266), ('Fidel', 0.7980986833572388)])
+('word:', 'paita', 'nearest neighbour:', [('3', 0.9654498100280762), ('5', 0.9650751352310181), ('s.', 0.9648880958557129), ('Rod', 0.964425265789032), ('laulu', 0.9643270969390869), ('2.', 0.9642373323440552), ('10', 0.9641746282577515), ('neljä', 0.9641554951667786), ('18.', 0.964149534702301), ('Lauren', 0.9641132950782776)])
+('word:', 'kenkä', 'nearest neighbour:', [('3', 0.884619414806366), ('-', 0.8845285773277283), (')', 0.8844029903411865), ('8', 0.8818924427032471), ('5', 0.8817691802978516), ('15', 0.881537914276123), ('s.', 0.8811688423156738), ('itse', 0.8809274435043335), ('9', 0.880804181098938), ('The', 0.8805369138717651)])
+('word:', 'takki', 'nearest neighbour:', [('9', 0.9408601522445679), ('3', 0.9403238296508789), ('kotona', 0.9401108026504517), ('7', 0.9400454759597778), ('del', 0.9400337338447571), ('että|ei', 0.9399812817573547), ('pian', 0.9399272203445435), ('pitää', 0.93982994556427), ('tulla', 0.9398027658462524), ('Pekka', 0.9397714138031006)])
+('word:', 'sukka', 'nearest neighbour:', [('i', 0.9305987358093262), ('*', 0.9295104742050171), ('New', 0.929205060005188), ('18.', 0.9289259910583496), ('kun', 0.9285763502120972), ('Of', 0.9285529851913452), ('Pelén', 0.9285434484481812), ('Lennox', 0.9285258054733276), ('laki', 0.928312361240387), ('Helsinki', 0.9282649755477905)])
+('word:', 'huivi', 'nearest neighbour:', [('7', 0.3669329881668091), ('1', 0.3645322620868683), ('(', 0.3594813048839569), ('4', 0.35908252000808716), ('23.', 0.3574369549751282), ('Maa', 0.3574305474758148), ('Rod', 0.3569290041923523), ('Ebert', 0.3567747473716736), ('*', 0.3563337028026581), ('i', 0.35629186034202576)])
+('word:', 'hame', 'nearest neighbour:', [(')', 0.8048875331878662), ('5', 0.8022880554199219), ('USA', 0.8003957867622375), ('New', 0.7996113300323486), ('haamu', 0.7993587255477905), ('8', 0.7992103099822998), ('elävä', 0.7990822792053223), ('pohjoinen', 0.7990733981132507), ('Zeitz', 0.7990108728408813), ('Karl', 0.7989957928657532)])
+('word:', 'mekko', 'nearest neighbour:', [('2', 0.9275559186935425), ('%', 0.9265061020851135), ('pitkä', 0.926316499710083), ('s.', 0.9261986017227173), ('John', 0.9261019825935364), ('2006', 0.9260483980178833), ('liiga', 0.9259880781173706), ('tuhat', 0.9259667992591858), ('ansio', 0.9259610176086426), ('1.', 0.925875723361969)])
+('word:', 'käsine', 'nearest neighbour:', [('mm', 0.8611524105072021), ('%', 0.8608427047729492), ('1964', 0.8606986403465271), ('MAYDAY', 0.8606187701225281), ('haamu', 0.8605915307998657), ('3', 0.8605567812919617), ('kotona', 0.8604498505592346), ('eri', 0.860417366027832), ('1962', 0.8604117631912231), ('9', 0.8603925704956055)])
+('word:', 'selleri', 'nearest neighbour:', [('4.', 0.9724382162094116), ('1.', 0.9715931415557861), ('7', 0.9713237285614014), ('peso', 0.9712801575660706), ('mm', 0.9712584614753723), ('10', 0.9711290597915649), ('uskoa', 0.9711235165596008), ('2', 0.9711169004440308), ('Anna', 0.971085786819458), ('Cohn-Bendit', 0.9710447788238525)])
+('word:', 'omena', 'nearest neighbour:', [('–', 0.6463800668716431), (',', 0.6410959362983704), ('2', 0.6394662857055664), ('(', 0.6388615369796753), ('9', 0.6371434926986694), (';', 0.6364693641662598), ('23.', 0.6356032490730286), ('yli', 0.6354690790176392), ('apu', 0.6353650689125061), ('10', 0.6350559592247009)])
+('word:', 'peruna', 'nearest neighbour:', [('4', 0.8794213533401489), ('Rod', 0.8788721561431885), ('pyytää', 0.8788387775421143), ('eräs', 0.8788257241249084), ('-', 0.8788020610809326), ('laulu', 0.8787950277328491), ('loppu', 0.8786771297454834), ('olla', 0.878639817237854), ('The', 0.8785107135772705), ('valvoa', 0.8784732818603516)])
+('word:', 'kurkku', 'nearest neighbour:', [('18', 0.8087421655654907), ('8', 0.808619499206543), ('.', 0.8085698485374451), ('32', 0.8081097602844238), ('(', 0.8069998025894165), ('mm', 0.806336522102356), ('1962', 0.8061789274215698), ('s.', 0.8061452507972717), ('New', 0.8058243989944458), ('olla', 0.8056666254997253)])
+('word:', 'papu', 'nearest neighbour:', [('/', 0.8498079776763916), ('-', 0.8475970029830933), ('av', 0.8468334078788757), (';', 0.8462123870849609), ('yli', 0.8461227416992188), ('mm', 0.8457802534103394), ('1.', 0.8456655740737915), ('vaihe', 0.8456159830093384), ('isä', 0.8455304503440857), ('120', 0.8453392386436462)])
+('word:', 'banaani', 'nearest neighbour:', [('*', 0.8324743509292603), ('John', 0.8286813497543335), ('2.', 0.8285603523254395), ('18.', 0.8278244733810425), ('(', 0.8277357220649719), ('1', 0.827549934387207), ('000', 0.8270639181137085), ('Suomi', 0.8269673585891724), ('pyytää', 0.8268872499465942), ('Otto', 0.826835572719574)])
+('word:', 'porkkana', 'nearest neighbour:', [('%', 0.9512099027633667), ('MAYDAY', 0.9504178762435913), (';', 0.9502373933792114), ('23.', 0.9500247240066528), ('USA', 0.9496489763259888), ('Pekka', 0.9496121406555176), ('aika', 0.949501633644104), ('kotona', 0.9495006203651428), ('loppu', 0.9494571685791016), ('haamu', 0.949414074420929)])
+('word:', 'ananas', 'nearest neighbour:', [(';', 0.7484254240989685), ('9', 0.7427083253860474), ('F', 0.7423053979873657), ('23.', 0.7420225739479065), ('i', 0.7419251203536987), ('Of', 0.7412708401679993), ('eräs', 0.7412109375), ('2008', 0.7410809993743896), ('laulu', 0.74107825756073), ('isä', 0.7409850358963013)])
+('word:', 'kurpitsa', 'nearest neighbour:', [('1', 0.7330951690673828), ('"', 0.7308042049407959), ('9', 0.7298605442047119), ('8', 0.7293186783790588), ('kotona', 0.7288691997528076), ('18', 0.7284725308418274), ('New', 0.7283350229263306), ('yhä', 0.7281233668327332), ('(', 0.727935791015625), ('laulu', 0.7278644442558289)])
+('word:', 'kaali', 'nearest neighbour:', [('23.', 0.9733864068984985), ('rooli', 0.9730895757675171), ('18.', 0.9730636477470398), ('tärkeä', 0.9729952812194824), ('yli', 0.9729869365692139), ('seurata', 0.9729443192481995), ('alue', 0.9729388952255249), ('apu', 0.9729301929473877), ('pyrkiä', 0.9728751182556152), ('alus', 0.9728665351867676)])
+('word:', 'sitruuna', 'nearest neighbour:', [('4.', 0.8022320866584778), ('/', 0.8007502555847168), ('mm', 0.800420880317688), ('Rod', 0.8000606298446655), ('1', 0.7998632788658142), ('The', 0.7998185157775879), ('18', 0.7997959852218628), ('se', 0.7996830940246582), ('Helsinki', 0.7995949983596802), ('mutta', 0.7995448112487793)])
+('word:', 'sipuli', 'nearest neighbour:', [('–', 0.7002168893814087), ('”', 0.6942837834358215), ('4.', 0.693436861038208), ('-', 0.6913855671882629), ('2002', 0.6904413104057312), ('8', 0.6901153326034546), ('Ii', 0.6900479793548584), ('John', 0.6897012591362), ('radio', 0.6896805167198181), ('3', 0.6896311044692993)])
+('word:', 'päärynä', 'nearest neighbour:', [(':', 0.6908756494522095), ('-', 0.6867181062698364), ('1', 0.6865687370300293), ('3', 0.6861076354980469), ('New', 0.6850968599319458), ('jo', 0.6850483417510986), ('2008', 0.685015082359314), ('*', 0.684942364692688), ('Henry', 0.6849333643913269), ('/', 0.684789776802063)])
+('word:', 'kirsikka', 'nearest neighbour:', [('toinen', 0.9557616710662842), ('120', 0.9556804895401001), (';', 0.9555922150611877), ('Otto', 0.9555904865264893), ('nainen', 0.9555874466896057), ('orgaaninen', 0.9555596113204956), ('USA', 0.9555573463439941), ('”', 0.9555380344390869), ('myös', 0.9554834365844727), ('18', 0.9554711580276489)])
+('word:', 'persikka', 'nearest neighbour:', [('5', 0.9539196491241455), ('”', 0.953895092010498), ('sama', 0.9533849954605103), ('numero', 0.9533743858337402), ('että', 0.9533202648162842), ('yksi', 0.9532800316810608), ('että|ei', 0.9532298445701599), ('kun', 0.9531960487365723), ('Maa', 0.9531873464584351), ('tuo', 0.9531615972518921)])
+lines with OOV:0
