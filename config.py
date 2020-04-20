@@ -80,7 +80,7 @@ CORPUS_DIR = os.path.join("data", "corpora")
 EVAL_DATA_DIR = os.path.join("data", "eval", "FinSemEvl", "FinSemEvl")
 
 # corpus file
-corpus_name = "a-iltalehti-2020-02-28_normalized_split.txt"
+corpus_name = "a-iltalehti-2020-02-28_normalized.txt"
 # corpus_name = "wikipedia2008_fi_lemmatized.txt"
 # corpus_name = "iltalehti-2020-02-28_wikipedia.txt"
 
@@ -88,7 +88,11 @@ train_data_file = os.path.join(CORPUS_DIR, corpus_name)
 
 # Word2Vec/Fasttext
 w2vec = False
-
+if w2vec:
+    model_type = 'Word2Vec'
+else:
+    model_type = 'FastText'
+    
 # model file
 binary = True
 if binary:
@@ -104,7 +108,6 @@ else:
 model_filename = "iltalehti-wikipedia-dim=300,window=5,mincount=2,sg=1,negative=15.bin"
 
 model_file = os.path.join(EMBEDDINGS_DIR, model_filename)
-
 
 # eval
 # how many groups of words per category

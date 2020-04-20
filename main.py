@@ -1,44 +1,29 @@
 import config
 import utils
-from train_w2v import train_model, train_fasttext_model
-from eval_w2v import *
+from train import train_model
+from evaluate import *
 from gensim.models.keyedvectors import FastTextKeyedVectors
 
 def main():
+    # train model
+    #model = train_model()
+
+    # alternatively load a pretrained model
+    print("Using the "+config.model_type+" model:", config.model_filename)
+    print("Loading "+config.model_type+" model...")
     if config.w2vec:
-        # train model
-        #w2v_model = train_model()
-    
-        # alternatively load a pretrained model
-        print("Using the word2vec model:", config.model_filename)
-        print("Loading word2vec model...")
-        w2v_model = KeyedVectors.load_word2vec_format(config.model_file, binary=True)
-        print("Word2vec model loaded.")
-    
-        # evaluate
-        result_string = intrusion(w2v_model)
-        result_string += analogy(w2v_model)
-        result_string += nearest_neighbours(w2v_model)
-    
-        with open(config.result_file, 'w', encoding='utf-8') as f:
-            f.write(result_string)
+        model = KeyedVectors.load_word2vec_format(config.model_file, binary=True)
     else:
-        # train model
-        fasttext_model = train_fasttext_model()
+        model = FastTextKeyedVectors.load(config.model_file)
+    print(config.model_type+" model loaded.")
     
-        # alternatively load a pretrained model
-        #print("Using the fasttext model:", config.model_filename)
-        #print("Loading fasttext model...")
-        #fasttext_model = FastTextKeyedVectors.load(config.model_file) #binary=True)
-        #print("Fasttextc model loaded.")
+    # evaluate
+    result_string = intrusion(model)
+    result_string += analogy(model)
+    result_string += nearest_neighbours(model)
     
-        # evaluate
-        result_string = intrusion(fasttext_model)
-        result_string += analogy(fasttext_model)
-        result_string += nearest_neighbours(fasttext_model)
-    
-        with open(config.result_file, 'w', encoding='utf-8') as f:
-            f.write(result_string)
+    with open(config.result_file, 'w', encoding='utf-8') as f:
+        f.write(result_string)
 
 if __name__ == "__main__":
     main()
