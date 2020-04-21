@@ -25,7 +25,7 @@ def capitalize_data():
                     for word_idx in range(len(line)):
                         line[word_idx] = line[word_idx].capitalize()
                     capitalized_data += " ".join(line) + "\n"
-            with open(ecapitalized_file, 'w', encoding='utf-8') as f:
+            with open(capitalized_file, 'w', encoding='utf-8') as f:
                 f.write(capitalized_data)
                 
     for eval_file in glob.glob(os.path.join(config.EVAL_DATA_DIR, 
