@@ -58,8 +58,7 @@ def train_model(model_type, arguments, model_file, train_data):
                         compute_loss=True,
                         callbacks = [callback()],
                     )
-    
-        model.wv.save_word2vec_format(model_file)
+        model.wv.save_word2vec_format(model_file, binary=True)
 
     elif model_type == 'FastText':
         model = FastText(
@@ -75,7 +74,7 @@ def train_model(model_type, arguments, model_file, train_data):
                         min_n =     arguments['min_n'],
                         max_n =     arguments['max_n'],
                     )
-        model.wv.save(model_file)
+        model.wv.save(model_file, binary=True)
 
     print("Model trained. Saved in file", model_file)
     print("Vocab size:", len(model.wv.vocab))

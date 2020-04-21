@@ -80,7 +80,7 @@ if TRAIN:
     # corpus_name = "iltalehti-2020-02-28_wikipedia"
     corpus_name = "test_corpus"
 
-    train_data_file = os.path.join(config.CORPUS_DIR, corpus_name + ".txt")
+    train_data_file = os.path.join(config.CORPUS_DIR, model_type + "_" + corpus_name + ".txt")
 
     # loop to train and evaluate multiple models
     for min_count in range(5):
@@ -119,7 +119,7 @@ else:
     # model_filename = "20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5"
     # model_filename = "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5"
     # model_filename = "fin-word2vec-lemma"
-    model_filename = "iltalehti-wikipedia-dim=300,window=5,mincount=2,sg=1,negative=15"
+    model_filename = "wikipedia2008_fi_lemmatized_size=200,alpha=0.025,window=5,min_count=2,sg=1,negative=15,iter=5"
 
     # remember to switch the right model_file_type
     model_file = os.path.join(config.EMBEDDINGS_DIR, model_filename + model_file_type)
@@ -127,7 +127,10 @@ else:
     print("Using the "+model_type+" model:", model_filename)
     print("Loading "+model_type+" model...")
     if model_type == 'Word2Vec':
-        model = KeyedVectors.load_word2vec_format(model_file, binary=True)
+        try:
+            model = KeyedVectors.load_word2vec_format(model_file, binary=True)
+        except UnicodeDecodeError:
+            model = KeyedVectors.load_word2vec_format(model_file, binary=False)
     else:
         model = FastTextKeyedVectors.load(model_file)
     print(model_type+" model loaded.")
