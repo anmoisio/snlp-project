@@ -6,12 +6,12 @@ import torch.nn.functional as F
 class RNNModel(nn.Module):
     """Container module with an encoder, a recurrent module, and a decoder."""
 
-    def __init__(self, rnn_type, ntoken, ninp, nhid, nlayers, dropout=0.5, tie_weights=False, w2v_model=None):
+    def __init__(self, rnn_type, ntoken, ninp, nhid, nlayers, dropout=0.5, tie_weights=False, vectors=None):
         super(RNNModel, self).__init__()
         self.ntoken = ntoken
         self.drop = nn.Dropout(dropout)
         self.encoder = nn.Embedding(ntoken, ninp)
-        self.w2v_model = w2v_model
+        self.vectors = vectors
         self.rnn = getattr(nn, rnn_type)(ninp, nhid, nlayers, dropout=dropout)
         self.decoder = nn.Linear(nhid, ntoken)
 
@@ -23,10 +23,10 @@ class RNNModel(nn.Module):
 
     def init_weights(self):
         initrange = 0.1
-        if self.w2v_model:
-            self.encoder.weight.data.copy_(torch.from_numpy(self.w2v_model.wv.vectors))
-        else:
-            self.encoder.weight.data.uniform_(-initrange, initrange)
+        # if self.vectors:
+        self.encoder.weight.data.copy_(self.vectors)
+        # else:
+        #     self.encoder.weight.data.uniform_(-initrange, initrange)
         self.decoder.bias.data.zero_()
         self.decoder.weight.data.uniform_(-initrange, initrange)
 

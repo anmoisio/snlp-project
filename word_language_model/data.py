@@ -3,17 +3,17 @@ from io import open
 import torch
 
 class Dictionary(object):
-    def __init__(self, w2v_model=None):
+    def __init__(self):
         self.word2idx = {}
         self.idx2word = []
 
-        if w2v_model:
-            # add the embedding vocab to this dictionary
-            for word in list(w2v_model.wv.vocab.keys()):
-                self.idx2word.append(word)
-                self.word2idx[word] = len(self.idx2word) - 1
+        # if w2v_model:
+        #     # add the embedding vocab to this dictionary
+        #     for word in list(w2v_model.wv.vocab.keys()):
+        #         self.idx2word.append(word)
+        #         self.word2idx[word] = len(self.idx2word) - 1
 
-            print("vocab size:", len(list(w2v_model.wv.vocab.keys())))
+        #     print("vocab size:", len(list(w2v_model.wv.vocab.keys())))
 
     def add_word(self, word, oovs):
         
@@ -31,8 +31,8 @@ class Dictionary(object):
 
 
 class Corpus(object):
-    def __init__(self, path, w2v_model):
-        self.dictionary = Dictionary(w2v_model)
+    def __init__(self, path):
+        self.dictionary = Dictionary()
         self.train = self.tokenize(os.path.join(path, 'train.txt'))
         self.valid = self.tokenize(os.path.join(path, 'valid.txt'))
         self.test = self.tokenize(os.path.join(path, 'test.txt'))
@@ -56,11 +56,11 @@ class Corpus(object):
                 words = line.split() # + ['<eos>']
                 ids = []
                 for word in words:
-                    try:
-                        ids.append(self.dictionary.word2idx[word])
-                    except KeyError:
+                    # try:
+                    ids.append(self.dictionary.word2idx[word])
+                    # except KeyError:
                         # print("OOV word removed from corpus:", word)
-                        pass
+                        # pass
                 idss.append(torch.tensor(ids).type(torch.int64))
             ids = torch.cat(idss)
 

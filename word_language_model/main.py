@@ -5,17 +5,17 @@ import math
 import os
 import torch
 import torch.nn as nn
-import torch.onnx
+import numpy as np
 from gensim.models import KeyedVectors, Word2Vec
 
 import data
 import model
 
-parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM/GRU/Transformer Language Model')
+parser = argparse.ArgumentParser(description='PyTorch RNN/LSTM/GRU Language Model')
 parser.add_argument('--data', type=str, default='wikitext-2',
                     help='location of the data corpus')
 parser.add_argument('--model', type=str, default='LSTM',
-                    help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU, Transformer)')
+                    help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU)')
 parser.add_argument('--emsize', type=int, default=100,
                     help='size of word embeddings')
 parser.add_argument('--nhid', type=int, default=100,
@@ -44,11 +44,6 @@ parser.add_argument('--log-interval', type=int, default=200, metavar='N',
                     help='report interval')
 parser.add_argument('--save', type=str, default='model.pt',
                     help='path to save the final model')
-parser.add_argument('--onnx-export', type=str, default='',
-                    help='path to export the final model in onnx format')
-
-parser.add_argument('--nhead', type=int, default=2,
-                    help='the number of heads in the encoder/decoder of the transformer model')
 
 parser.add_argument('--emmodel', type=str, default=os.path.join('..', 'data', 'embeddings', 'il_2020-02-28_win5_min5_wor4_sg1_neg15.model'),
                     help='location of the embedding model')
@@ -57,24 +52,41 @@ args = parser.parse_args()
 
 # Set the random seed manually for reproducibility.
 torch.manual_seed(args.seed)
+
+# check if possible to use GPU
 if torch.cuda.is_available():
     if not args.cuda:
         print("WARNING: You have a CUDA device, so you should probably run with --cuda")
-
 device = torch.device("cuda" if args.cuda else "cpu")
 
 ###############################################################################
-# Load data
+# Load word embeddings and corpus
 ###############################################################################
-
 w2v_model = None
 if args.emmodel != 'no':
     print("using pretrained word embeddings", args.emmodel)
     # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
     w2v_model = Word2Vec.load(args.emmodel)
-
+    assert w2v_model.vector_size == args.emsize
+    
 data_dir = os.path.join("data", args.data)
-corpus = data.Corpus(data_dir, w2v_model=w2v_model)
+corpus = data.Corpus(data_dir)
+
+# encoder layer weights
+vectors = torch.zeros(len(corpus.dictionary), args.emsize)
+# initialise uniformly
+initrange = 0.1
+nn.init.uniform_(vectors)
+print("encoder layer shape", vectors.shape)
+# use pretrained vectors if available
+if w2v_model:
+    for i, word in enumerate(corpus.dictionary.idx2word):
+        try:
+            # print(w2v_model.wv[word].shape, vectors[i].shape)
+            vectors[i] = torch.tensor(w2v_model.wv[word])
+        except KeyError as err:
+            pass
+
 
 # Starting from sequential data, batchify arranges the dataset into columns.
 # For instance, with the alphabet as the sequence and batch size 4, we'd get
@@ -107,11 +119,9 @@ test_data = batchify(corpus.test, eval_batch_size)
 ###############################################################################
 
 ntokens = len(corpus.dictionary)
-if args.model == 'Transformer':
-    model = model.TransformerModel(ntokens, args.emsize, args.nhead, args.nhid, args.nlayers, args.dropout).to(device)
-else:
-    model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied, w2v_model=w2v_model).to(device)
+model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied, vectors=vectors).to(device)
 
+# loss function
 criterion = nn.NLLLoss()
 
 ###############################################################################
@@ -120,12 +130,10 @@ criterion = nn.NLLLoss()
 
 def repackage_hidden(h):
     """Wraps hidden states in new Tensors, to detach them from their history."""
-
     if isinstance(h, torch.Tensor):
         return h.detach()
     else:
         return tuple(repackage_hidden(v) for v in h)
-
 
 # get_batch subdivides the source data into chunks of length args.bptt.
 # If source is equal to the example output of the batchify function, with
@@ -255,7 +263,3 @@ print('=' * 89)
 print('| End of training | test loss {:5.2f} | test ppl {:8.2f}'.format(
     test_loss, math.exp(test_loss)))
 print('=' * 89)
-
-if len(args.onnx_export) > 0:
-    # Export the model in ONNX format.
-    export_onnx(args.onnx_export, batch_size=1, seq_len=args.bptt)
