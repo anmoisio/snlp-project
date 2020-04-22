@@ -8,13 +8,14 @@
 import argparse
 
 import torch
-
+import os
+from gensim.models import KeyedVectors, Word2Vec
 import data
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 Language Model')
 
 # Model parameters.
-parser.add_argument('--data', type=str, default='./data/wikitext-2',
+parser.add_argument('--data', type=str, default='wikitext-2',
                     help='location of the data corpus')
 parser.add_argument('--checkpoint', type=str, default='./model.pt',
                     help='model checkpoint to use')
@@ -30,6 +31,11 @@ parser.add_argument('--temperature', type=float, default=1.0,
                     help='temperature - higher will increase diversity')
 parser.add_argument('--log-interval', type=int, default=100,
                     help='reporting interval')
+
+parser.add_argument('--emmodel', type=str, default=os.path.join('..', 'data', 'embeddings', 'il_2020-02-28_win5_min5_wor4_sg1_neg15.model'),
+                    help='location of the embedding model')
+
+
 args = parser.parse_args()
 
 # Set the random seed manually for reproducibility.
@@ -47,7 +53,10 @@ with open(args.checkpoint, 'rb') as f:
     model = torch.load(f).to(device)
 model.eval()
 
-corpus = data.Corpus(args.data)
+w2v_model = Word2Vec.load(args.emmodel)
+
+data_dir = os.path.join("data", args.data)
+corpus = data.Corpus(data_dir, w2v_model)
 ntokens = len(corpus.dictionary)
 
 is_transformer_model = hasattr(model, 'model_type') and model.model_type == 'Transformer'
