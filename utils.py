@@ -58,11 +58,28 @@ def capitalize_data():
                     capitalized_data += " ".join(line) + "\n"
             with open(capitalized_file, 'w', encoding='utf-8') as f:
                 f.write(capitalized_data)
-                
+
+def split_sentences():
+    with open(os.path.join('data', 'corpora', 'a-iltalehti-2020-02-28_normalized.txt'), 'r', encoding='utf-8') as f:
+        corpus = f.read().split('.')
+
+    with open(os.path.join('data', 'corpora', 'iltalehti_new.txt'), 'w', encoding='utf-8') as f:
+        for line in corpus:
+            if len(line.strip()) > 0:
+                f.write(line + '.')
+                f.write('\n')
+
+def remove_divider():
+    with open(os.path.join('data', 'corpora', 'wikipedia2008_fi_lemmatized.txt'), 'r', encoding='utf-8') as f:
+        corpus = f.read().replace('|','')
+
+    with open(os.path.join('data', 'corpora', 'wikipedia_new.txt'), 'w', encoding='utf-8') as f:
+        f.write(corpus)
+
 def combine_corpora():
-    file1 = os.path.join("data", "corpora", "a-iltalehti-2020-02-28_normalized_split.txt")
-    file2 = os.path.join("data", "corpora", "wikipedia2008_fi_lemmatized.txt")
-    combined = os.path.join("data", "corpora", "iltalehti-2020-02-28_wikipedia.txt")
+    file1 = os.path.join("data", "corpora", "wikipedia_new.txt")
+    file2 = os.path.join("data", "corpora", "iltalehti_new.txt")
+    combined = os.path.join("data", "corpora", "iltalehti-wikipedia_new.txt")
 
     with open(file1, 'r', encoding='utf-8') as f:
         corpus1 = f.read()
@@ -74,6 +91,8 @@ def combine_corpora():
         f.write(corpus1)
         f.write('\n')
         f.write(corpus2)
+
+combine_corpora()
 
 def print_clusters():
     file_path = os.path.join("clusters", "wikipedia_clusters_full_k20.txt")
@@ -91,16 +110,6 @@ def print_clusters():
 
     for c in clusters:
         print(c[:50]) # print 50 words from each cluster
-
-
-def split_sentences():
-    with open(os.path.join('data', 'corpora', 'a-iltalehti-2020-02-28_normalized.txt'), 'r', encoding='utf-8') as f:
-        corpus = f.read().split('.')
-
-    with open(os.path.join('data', 'corpora', 'a-iltalehti-2020-02-28_normalized_split.txt'), 'w', encoding='utf-8') as f:
-        for line in corpus:
-            f.write(line)
-            f.write('\n')
 
 def print_csv_rows(file_name, n_rows):
     """
@@ -168,5 +177,3 @@ def split_LM_corpus():
     with open(os.path.join("data", "corpora", "test.txt"), 'w', encoding='utf-8') as f:
         for line in test:
             f.write(line)
-
-split_LM_corpus()
