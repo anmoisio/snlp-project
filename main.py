@@ -1,4 +1,3 @@
-import utils
 import config
 from train import train_model
 from evaluate import *
@@ -6,8 +5,8 @@ from gensim.models.keyedvectors import FastTextKeyedVectors
 import os
 
 # select Word2Vec/Fasttext
-# model_type = 'Word2Vec'
-model_type = 'FastText'
+model_type = 'Word2Vec'
+# model_type = 'FastText'
 
 # save type, i.e. suffix of the model file
 model_file_type = ".bin"
@@ -15,7 +14,7 @@ model_file_type = ".bin"
 # model_file_type = ".txt"
 
 # train new or use pretrained?
-TRAIN = True
+TRAIN = False
 
 if TRAIN:
     """
@@ -78,7 +77,7 @@ if TRAIN:
     # corpus_name = "a-iltalehti-2020-02-28_normalized_split"
     # corpus_name = "wikipedia2008_fi_lemmatized"
     # corpus_name = "iltalehti-2020-02-28_wikipedia"
-    corpus_name = "test_corpus"
+    corpus_name = "iltalehti-wikipedia_new"
 
     train_data_file = os.path.join(config.CORPUS_DIR, corpus_name + ".txt")
 
@@ -98,7 +97,7 @@ if TRAIN:
         arg_string = arg_string[:-1] # delete last comma
 
         # model file
-        model_filename = corpus_name + "_" + arg_string
+        model_filename = model_type + "_" + corpus_name + "_" + arg_string
         # remember to switch the right model_file_type
         model_file = os.path.join(config.EMBEDDINGS_DIR, model_filename + model_file_type)
 
@@ -109,7 +108,7 @@ if TRAIN:
         result_string += analogy(model)
         result_string += nearest_neighbours(model)
 
-        result_file = os.path.join("results", model_type + model_filename + "_results.txt")
+        result_file = os.path.join("results", model_filename + "_results.txt")
 
         with open(result_file, 'w', encoding='utf-8') as f:
             f.write(result_string)
@@ -119,7 +118,9 @@ else:
     # model_filename = "20190509_yle_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5"
     # model_filename = "20190509_yle-wikipedia_word2vec_cbow_fi_lr=0.05,dim=100,ws=5,epoch=5,neg=5,mincount=5"
     # model_filename = "fin-word2vec-lemma"
-    model_filename = "iltalehti-wikipedia-dim=300,window=5,mincount=2,sg=1,negative=15"
+    # model_filename = "wikipedia2008_fi_lemmatized_size=200,alpha=0.025,window=5,min_count=2,sg=1,negative=15,iter=5"
+    model_filename = "Word2Vec_iltalehti-wikipedia_new_size=300,alpha=0.025,window=5,min_count=2,sg=1,negative=5,iter=15"
+    
 
     # remember to switch the right model_file_type
     model_file = os.path.join(config.EMBEDDINGS_DIR, model_filename + model_file_type)
@@ -127,7 +128,10 @@ else:
     print("Using the "+model_type+" model:", model_filename)
     print("Loading "+model_type+" model...")
     if model_type == 'Word2Vec':
-        model = KeyedVectors.load_word2vec_format(model_file, binary=True)
+        try:
+            model = KeyedVectors.load_word2vec_format(model_file, binary=True)
+        except UnicodeDecodeError:
+            model = KeyedVectors.load_word2vec_format(model_file, binary=False)
     else:
         model = FastTextKeyedVectors.load(model_file)
     print(model_type+" model loaded.")
