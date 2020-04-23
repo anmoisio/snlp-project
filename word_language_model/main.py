@@ -14,6 +14,8 @@ import model
 parser = argparse.ArgumentParser(description='PyTorch RNN/LSTM/GRU Language Model')
 parser.add_argument('--data', type=str, default='wikitext-2',
                     help='location of the data corpus')
+parser.add_argument('--evaluate', type=str, default='model.pt',
+                    help='only evaluation')
 parser.add_argument('--model', type=str, default='LSTM',
                     help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU)')
 parser.add_argument('--emsize', type=int, default=100,
@@ -59,33 +61,35 @@ if torch.cuda.is_available():
         print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 device = torch.device("cuda" if args.cuda else "cpu")
 
-###############################################################################
-# Load word embeddings and corpus
-###############################################################################
-w2v_model = None
-if args.emmodel != 'no':
-    print("using pretrained word embeddings", args.emmodel)
-    # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
-    w2v_model = Word2Vec.load(args.emmodel)
-    assert w2v_model.vector_size == args.emsize
-    
 data_dir = os.path.join("data", args.data)
 corpus = data.Corpus(data_dir)
 
 # encoder layer weights
 vectors = torch.zeros(len(corpus.dictionary), args.emsize)
-# initialise uniformly
-initrange = 0.1
-nn.init.uniform_(vectors)
-print("encoder layer shape", vectors.shape)
-# use pretrained vectors if available
-if w2v_model:
-    for i, word in enumerate(corpus.dictionary.idx2word):
-        try:
-            # print(w2v_model.wv[word].shape, vectors[i].shape)
-            vectors[i] = torch.tensor(w2v_model.wv[word])
-        except KeyError as err:
-            pass
+
+if not args.evaluate:
+    ###############################################################################
+    # Load word embeddings and corpus
+    ###############################################################################
+    w2v_model = None
+    if args.emmodel != 'no':
+        print("using pretrained word embeddings", args.emmodel)
+        # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
+        w2v_model = Word2Vec.load(args.emmodel)
+        assert w2v_model.vector_size == args.emsize
+
+    # initialise uniformly
+    initrange = 0.1
+    nn.init.uniform_(vectors)
+    print("encoder layer shape", vectors.shape)
+    # use pretrained vectors if available
+    if w2v_model:
+        for i, word in enumerate(corpus.dictionary.idx2word):
+            try:
+                # print(w2v_model.wv[word].shape, vectors[i].shape)
+                vectors[i] = torch.tensor(w2v_model.wv[word])
+            except KeyError as err:
+                pass
 
 
 # Starting from sequential data, batchify arranges the dataset into columns.
@@ -214,48 +218,51 @@ def train():
 
 def export_onnx(path, batch_size, seq_len):
     print('The model is also exported in ONNX format at {}'.
-          format(os.path.realpath(args.onnx_export)))
+        format(os.path.realpath(args.onnx_export)))
     model.eval()
     dummy_input = torch.LongTensor(seq_len * batch_size).zero_().view(-1, batch_size).to(device)
     hidden = model.init_hidden(batch_size)
     torch.onnx.export(model, (dummy_input, hidden), path)
 
+if not args.evaluate:
+    # Loop over epochs.
+    lr = args.lr
+    best_val_loss = None
 
-# Loop over epochs.
-lr = args.lr
-best_val_loss = None
-
-# At any point you can hit Ctrl + C to break out of training early.
-try:
-    for epoch in range(1, args.epochs+1):
-        epoch_start_time = time.time()
-        train()
-        val_loss = evaluate(val_data)
+    # At any point you can hit Ctrl + C to break out of training early.
+    try:
+        for epoch in range(1, args.epochs+1):
+            epoch_start_time = time.time()
+            train()
+            val_loss = evaluate(val_data)
+            print('-' * 89)
+            print('| end of epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
+                    'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
+                                            val_loss, math.exp(val_loss)))
+            print('-' * 89)
+            # Save the model if the validation loss is the best we've seen so far.
+            if not best_val_loss or val_loss < best_val_loss:
+                with open(args.save, 'wb') as f:
+                    torch.save(model, f)
+                best_val_loss = val_loss
+            else:
+                # Anneal the learning rate if no improvement has been seen in the validation dataset.
+                lr /= 4.0
+    except KeyboardInterrupt:
         print('-' * 89)
-        print('| end of epoch {:3d} | time: {:5.2f}s | valid loss {:5.2f} | '
-                'valid ppl {:8.2f}'.format(epoch, (time.time() - epoch_start_time),
-                                           val_loss, math.exp(val_loss)))
-        print('-' * 89)
-        # Save the model if the validation loss is the best we've seen so far.
-        if not best_val_loss or val_loss < best_val_loss:
-            with open(args.save, 'wb') as f:
-                torch.save(model, f)
-            best_val_loss = val_loss
-        else:
-            # Anneal the learning rate if no improvement has been seen in the validation dataset.
-            lr /= 4.0
-except KeyboardInterrupt:
-    print('-' * 89)
-    print('Exiting from training early')
+        print('Exiting from training early')
 
-# Load the best saved model.
-with open(args.save, 'rb') as f:
-    model = torch.load(f)
-    # after load the rnn params are not a continuous chunk of memory
-    # this makes them a continuous chunk, and will speed up forward pass
-    # Currently, only rnn model supports flatten_parameters function.
-    if args.model in ['RNN_TANH', 'RNN_RELU', 'LSTM', 'GRU']:
-        model.rnn.flatten_parameters()
+    # Load the best saved model.
+    with open(args.save, 'rb') as f:
+        model = torch.load(f)
+        # after load the rnn params are not a continuous chunk of memory
+        # this makes them a continuous chunk, and will speed up forward pass
+        # Currently, only rnn model supports flatten_parameters function.
+        if args.model in ['RNN_TANH', 'RNN_RELU', 'LSTM', 'GRU']:
+            model.rnn.flatten_parameters()
+
+if args.evaluate:
+    model = torch.load(args.evaluate)
 
 # Run on test data.
 test_loss = evaluate(test_data)
