@@ -4,6 +4,11 @@ from sklearn.decomposition import PCA
 from matplotlib import pyplot as plt
 import config
 import glob
+#import libvoikko #import for normalise()
+from nltk.tokenize import RegexpTokenizer
+from nltk.tokenize import word_tokenize
+import time
+from tqdm import tqdm
 
 def capitalize_data():
     """
@@ -94,13 +99,108 @@ def print_clusters():
 
 
 def split_sentences():
-    with open(os.path.join('data', 'corpora', 'a-iltalehti-2020-02-28_normalized.txt'), 'r', encoding='utf-8') as f:
+    # DEPRECATED. Included in normalise()
+    with open(os.path.join('data', 'corpora', 
+                           'a-iltalehti-2020-02-28_normalized.txt'),
+              'r', encoding='utf-8') as f:
         corpus = f.read().split('.')
 
-    with open(os.path.join('data', 'corpora', 'a-iltalehti-2020-02-28_normalized_split.txt'), 'w', encoding='utf-8') as f:
+    with open(os.path.join('data', 'corpora', 
+                           'a-iltalehti-2020-02-28_normalized_split.txt'), 
+              'w', encoding='utf-8') as f:
         for line in corpus:
             f.write(line)
             f.write('\n')
+
+def normalise():
+    """
+    Normalise corpus
+    """
+    import libvoikko
+    #Define a Voikko class for Finnish
+    analyzer = libvoikko.Voikko(u"fi")
+    
+    #Open the text file
+    print("Reading the input text file...")
+    with open(os.path.join('data', 'corpora', 
+                           'a-iltalehti-2020-02-28.txt'),
+              'r', encoding='utf-8') as f:
+        text = f.read()
+    
+    #Print text
+    #print("TEXT BEFORE NORMALISATION")
+    #print(text)
+    
+    #Remove numbers
+    #text = ''.join(c for c in text if not c.isdigit())
+    
+    #Tokenize & remove punctuation
+    #tokenizer = RegexpTokenizer(r'\w+')
+    #text = tokenizer.tokenize(text)
+    
+    #Tokenize
+    tokenizer = word_tokenize
+    print("Tokenizing...")
+    text = word_tokenize(text)
+    text_length = len(text)
+    
+    #Lemmatize tokens
+    
+    pbar = tqdm(total=text_length, ascii=True, desc = 'Lemmatizing...',
+                position=0,unit='keys', unit_scale=True)
+    for idx, word in enumerate(text):
+        #Check if word is found from dictionary
+        if analyzer.analyze(word):
+            #Lemmatize the word. analyze() function returns
+            #various info for the word
+            
+            #Check if word starts with lowercase
+            if word[0].islower():   
+                
+                #Check if there are more than 1 possible lemmas in the vocabulary
+                if len(analyzer.analyze(word))>1:
+                    #Esclude classes paikannimi, sukunimi, etunimi, nimi
+                    analyzed = [element for element in analyzer.analyze(word) if
+                                'paikannimi' not in element.values() and
+                                'sukunumi' not in element.values() and
+                                'etunumi' not in element.values() and
+                                'nimi' not in element.values()]
+                    
+                    #Avoid an error if it turns out to be empty list after
+                    #excluding these classes
+                    if len(analyzed)>0:
+                        text[idx] = analyzed[0]['BASEFORM'].lower()
+                    else:
+                        text[idx] = analyzer.analyze(word)[0]['BASEFORM'].lower()
+                
+                #Pick the lowercased lemma directly if there is only one lemma
+                #for the query word
+                else:
+                    text[idx] = analyzer.analyze(word)[0]['BASEFORM'].lower()
+            
+            #The word is capitalized => proper noun or/and the first word of a
+            #sentence. Pick the lemma without applying lowercasing.
+            else:
+                text[idx] = analyzer.analyze(word)[0]['BASEFORM']
+        pbar.update(1)
+    
+    #Print normalized text
+    #print("TEXT AFTER NORMALISATION")    
+    #print(' '.join(text))
+    
+    #Write tokenized text to a new text file
+    print("\nWriting the normalized text to a txt file...")
+    with open(os.path.join('data', 'corpora', 
+                           'a-iltalehti-2020-02-28_normalized.txt'),
+              'r', encoding='utf-8') as f:
+        
+        #Write the whole text in one line
+        #f.write(' '.join(text))
+        
+        #Write one sentence per line
+        for sentence in ' '.join(text).split('.'):
+            f.write(sentence)
+            f.write('.\n')
 
 def print_csv_rows(file_name, n_rows):
     """
