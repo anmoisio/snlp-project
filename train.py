@@ -74,7 +74,7 @@ def train_model(model_type, arguments, model_file, train_data):
                         min_n =     arguments['min_n'],
                         max_n =     arguments['max_n'],
                     )
-        model.wv.save(model_file, binary=True)
+        model.wv.save(model_file)
 
     print("Model trained. Saved in file", model_file)
     print("Vocab size:", len(model.wv.vocab))
