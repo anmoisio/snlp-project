@@ -4,3 +4,6 @@ notes
 cluto*
 .vscode
 __pycache__/
+
+!word_language_model/*
+word_language_model/__pycache__/

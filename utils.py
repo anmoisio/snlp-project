@@ -152,14 +152,16 @@ def plot_pca(w2v_model):
 
 
 def split_LM_corpus():
-    file1 = os.path.join("data", "corpora", "a-iltalehti-2020-02-28_normalized_split.txt")
+    file1 = os.path.join("data", "corpora", "iltalehti_new.txt")
 
     with open(file1, 'r', encoding='utf-8') as f:
         corpus = f.readlines()
 
-    truncated = corpus[1 : int(len(corpus) / 10)]
+    divide = 10
+    truncated = corpus[ : int(len(corpus) / divide)]
 
-    train_len = int(len(truncated)*0.8)
+    train_portion = 0.8
+    train_len = int(len(truncated)*train_portion)
     train = truncated[1 : train_len]
     rest = truncated[train_len : ]
 
@@ -177,3 +179,5 @@ def split_LM_corpus():
     with open(os.path.join("data", "corpora", "test.txt"), 'w', encoding='utf-8') as f:
         for line in test:
             f.write(line)
+
+split_LM_corpus()
