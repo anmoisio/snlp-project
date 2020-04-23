@@ -288,5 +288,3 @@ def parse_yle():
                     for item in article['content']:
                         if item['type'] == 'text':
                             save_file.write(item['text'])
-
-parse_yle()
