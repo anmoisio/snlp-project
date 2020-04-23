@@ -1,5 +1,6 @@
 import os
 import csv
+import json
 from sklearn.decomposition import PCA
 from matplotlib import pyplot as plt
 import config
@@ -271,3 +272,21 @@ def normalise():
         for sentence in ' '.join(text).split('.'):
             f.write(sentence)
             f.write('.\n')
+
+def parse_yle():
+    """ Parse Yle news .json corpus"""
+    yle_dir = os.path.join(config.CORPUS_DIR, "ylenews-fi-2011-2018-src", "data", "fi")
+
+    # use mode 'a' if you parse many files
+    with open(os.path.join(config.CORPUS_DIR, 'yle_small.txt'), 'w', encoding="utf-8") as save_file:
+        ## use wildcards * to parse many files
+        # for filename in glob.glob(os.path.join(yle_dir, "*", "*", "*.json")):
+        for filename in glob.glob(os.path.join(yle_dir, "2018", "01", "0001.json")): 
+            with open(filename, 'r', encoding="utf-8") as f:
+                json_file = json.load(f)
+                for article in json_file['data']:
+                    for item in article['content']:
+                        if item['type'] == 'text':
+                            save_file.write(item['text'])
+
+parse_yle()

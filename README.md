@@ -14,6 +14,10 @@ Download pre-trained embeddings:
 
 Move embeddings to data/embeddings/
 
+Download Yle corpus:
+- https://korp.csc.fi/download/YLE/fi/2011-2018-src/ylenews-fi-2011-2018-src
+
+
 Embedding statistics:
 ---
 fin-word2vec-lemma.bin:
