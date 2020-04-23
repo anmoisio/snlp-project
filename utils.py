@@ -92,8 +92,6 @@ def combine_corpora():
         f.write('\n')
         f.write(corpus2)
 
-combine_corpora()
-
 def print_clusters():
     file_path = os.path.join("clusters", "wikipedia_clusters_full_k20.txt")
 
@@ -179,5 +177,3 @@ def split_LM_corpus():
     with open(os.path.join("data", "corpora", "test.txt"), 'w', encoding='utf-8') as f:
         for line in test:
             f.write(line)
-
-split_LM_corpus()
