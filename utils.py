@@ -217,7 +217,13 @@ def normalise():
     print("Tokenizing...")
     text = word_tokenize(text)
     text_length = len(text)
-    
+
+    #Join dots with ordinal numbers
+    print("Merging ordinal numbers and dots...")
+    for idx, word in enumerate(text):
+        if word.isdigit() and text[idx+1] == '.' and text[idx+2][0].islower():
+            text[idx:idx+2] = [''.join(text[idx:idx+2])]
+            
     #Lemmatize tokens
     pbar = tqdm(total=text_length, ascii=True, desc = 'Lemmatizing...',
                 position=0,unit='keys', unit_scale=True)
