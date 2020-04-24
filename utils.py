@@ -5,6 +5,10 @@ from sklearn.decomposition import PCA
 from matplotlib import pyplot as plt
 import config
 import glob
+from nltk.tokenize import RegexpTokenizer
+from nltk.tokenize import word_tokenize
+import time
+from tqdm import tqdm
 
 def capitalize_data():
     """
@@ -210,13 +214,11 @@ def normalise():
     #text = tokenizer.tokenize(text)
     
     #Tokenize
-    tokenizer = word_tokenize
     print("Tokenizing...")
     text = word_tokenize(text)
     text_length = len(text)
     
     #Lemmatize tokens
-    
     pbar = tqdm(total=text_length, ascii=True, desc = 'Lemmatizing...',
                 position=0,unit='keys', unit_scale=True)
     for idx, word in enumerate(text):
@@ -269,9 +271,11 @@ def normalise():
         #f.write(' '.join(text))
         
         #Write one sentence per line
-        for sentence in ' '.join(text).split('.'):
-            f.write(sentence)
-            f.write('.\n')
+        for sentence in ' '.join(text).split(' .'):
+            #Write only if sentence consists of more than one word
+            if len(sentence)>1:
+                f.write(sentence)
+                f.write('.\n')
 
 def parse_yle():
     """ Parse Yle news .json corpus"""
