@@ -265,7 +265,7 @@ def normalise():
     print("\nWriting the normalized text to a txt file...")
     with open(os.path.join('data', 'corpora', 
                            'a-iltalehti-2020-02-28_normalized.txt'),
-              'r', encoding='utf-8') as f:
+              'w', encoding='utf-8') as f:
         
         #Write the whole text in one line
         #f.write(' '.join(text))
