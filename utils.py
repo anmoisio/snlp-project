@@ -229,7 +229,9 @@ def normalise():
                 position=0,unit='keys', unit_scale=True)
     for idx, word in enumerate(text):
         #Check if word is found from dictionary
-        if analyzer.analyze(word):
+        
+        analyzed = analyzer.analyze(word)
+        if analyzed:
             #Lemmatize the word. analyze() function returns
             #various info for the word
             
@@ -237,9 +239,9 @@ def normalise():
             if word[0].islower():   
                 
                 #Check if there are more than 1 possible lemmas in the vocabulary
-                if len(analyzer.analyze(word))>1:
+                if len(analyzed)>1:
                     #Esclude classes paikannimi, sukunimi, etunimi, nimi
-                    analyzed = [element for element in analyzer.analyze(word) if
+                    analyzed_mod = [element for element in analyzed if
                                 'paikannimi' not in element.values() and
                                 'sukunumi' not in element.values() and
                                 'etunumi' not in element.values() and
@@ -247,20 +249,20 @@ def normalise():
                     
                     #Avoid an error if it turns out to be empty list after
                     #excluding these classes
-                    if len(analyzed)>0:
-                        text[idx] = analyzed[0]['BASEFORM'].lower()
+                    if len(analyzed_mod)>0:
+                        text[idx] = analyzed_mod[0]['BASEFORM'].lower()
                     else:
-                        text[idx] = analyzer.analyze(word)[0]['BASEFORM'].lower()
+                        text[idx] = analyzed[0]['BASEFORM'].lower()
                 
                 #Pick the lowercased lemma directly if there is only one lemma
                 #for the query word
                 else:
-                    text[idx] = analyzer.analyze(word)[0]['BASEFORM'].lower()
+                    text[idx] = analyzed[0]['BASEFORM'].lower()
             
             #The word is capitalized => proper noun or/and the first word of a
             #sentence. Pick the lemma without applying lowercasing.
             else:
-                text[idx] = analyzer.analyze(word)[0]['BASEFORM']
+                text[idx] = analyzed[0]['BASEFORM']
         pbar.update(1)
     
     #Print normalized text
