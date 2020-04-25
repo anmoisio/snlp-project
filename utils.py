@@ -285,9 +285,12 @@ def normalise(filename, lemmatize=True):
     #print(' '.join(text))
     
     #Write tokenized text to a text file and save it in /data/corpora/
+    if lemmatize:
+        filename_normalized = filename[:-4]+'_normalized.txt'
+    else:
+        filename_normalized = filename[:-4]+'_normalized_NON-lemmatized.txt'
     print("\nWriting the normalized text to a txt file...")
-    with open(os.path.join('data', 'corpora', 
-                           filename[:-4]+'_normalized.txt'),
+    with open(filename_normalized,
               'w', encoding='utf-8') as f:
         
         #Write the whole text in one line
