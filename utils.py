@@ -10,6 +10,7 @@ from nltk.tokenize import word_tokenize
 import time
 from tqdm import tqdm
 import re
+import string
 
 def capitalize_data():
     """
@@ -187,50 +188,6 @@ def split_sentences():
         for line in corpus:
             f.write(line)
             f.write('\n')
-
-def num_to_hashtag(filename):
-    """
-    Replace the numbers with hashtags in the corpus
-    """
-    #Open the text file
-    with open(os.path.join('data', 'corpora', filename),
-              'r', encoding='utf-8') as f:
-        text = f.read()
-     
-    #Replace numbers with hashtags. Replace all numbers with more than four
-    #digits with five hashtags
-    text = re.sub('[0-9]', '#', text)
-    text = re.sub('[0-9]{2}', '##', text)
-    text = re.sub('[0-9]{3}', '###', text)
-    text = re.sub('[0-9]{4}', '####', text)
-    text = re.sub('[0-9]{5,}', '#####', text)
-    
-    #Write the processed text to a file and save it in /data/corpora/
-    filename_processed = filename[:-4]+'_no_nums.txt'
-    with open(os.path.join('data', 'corpora', filename_processed),
-              'w', encoding='utf-8') as f:
-        f.write(text)
-
-def rm_punctuation(filename):
-    import string
-    """
-    Remove punctuation and special characters in corpus
-    """
-    #Open the text file
-    with open(os.path.join('data', 'corpora', filename),
-              'r', encoding='utf-8') as f:
-        text = f.read()
-     
-    #Remove all punctuation and special characters
-    punctuation = string.punctuation.replace('.','')
-    pattern = r"[{}]".format(punctuation)
-    text = re.sub(pattern,' ', text)
-    
-    #Write the processed text to a file and save it in /data/corpora/
-    filename_processed = filename[:-4]+'_no_punct.txt'
-    with open(os.path.join('data', 'corpora', filename_processed),
-              'w', encoding='utf-8') as f:
-        f.write(text)
         
 def normalise(filename, lemmatize=True):
     """
@@ -349,6 +306,49 @@ def normalise(filename, lemmatize=True):
                 f.write(sentence)
                 f.write(' .\n')
 
+def num_to_hashtag(filename):
+    """
+    Replace the numbers with hashtags in the corpus
+    """
+    #Open the text file
+    with open(os.path.join('data', 'corpora', filename),
+              'r', encoding='utf-8') as f:
+        text = f.read()
+     
+    #Replace numbers with hashtags. Replace all numbers with more than four
+    #digits with five hashtags
+    text = re.sub('[0-9]', '#', text)
+    text = re.sub('[0-9]{2}', '##', text)
+    text = re.sub('[0-9]{3}', '###', text)
+    text = re.sub('[0-9]{4}', '####', text)
+    text = re.sub('[0-9]{5,}', '#####', text)
+    
+    #Write the processed text to a file and save it in /data/corpora/
+    filename_processed = filename[:-4]+'_no_nums.txt'
+    with open(os.path.join('data', 'corpora', filename_processed),
+              'w', encoding='utf-8') as f:
+        f.write(text)
+
+def rm_punctuation(filename):
+    """
+    Remove punctuation and special characters in corpus
+    """
+    #Open the text file
+    with open(os.path.join('data', 'corpora', filename),
+              'r', encoding='utf-8') as f:
+        text = f.read()
+     
+    #Remove all punctuation and special characters
+    punctuation = string.punctuation.replace('.','')
+    pattern = r"[{}]".format(punctuation)
+    text = re.sub(pattern,' ', text)
+    
+    #Write the processed text to a file and save it in /data/corpora/
+    filename_processed = filename[:-4]+'_no_punct.txt'
+    with open(os.path.join('data', 'corpora', filename_processed),
+              'w', encoding='utf-8') as f:
+        f.write(text)
+        
 def parse_yle():
     """ Parse Yle news .json corpus"""
     yle_dir = os.path.join(config.CORPUS_DIR, "ylenews-fi-2011-2018-src", "data", "fi")
