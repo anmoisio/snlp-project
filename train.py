@@ -8,6 +8,7 @@ from gensim.models.callbacks import CallbackAny2Vec
 from gensim.test.utils import datapath
 from gensim import utils
 import os
+from evaluate import *
 
 # yield lines one by one so that memory is not filled
 class MyCorpus(object):
@@ -25,9 +26,10 @@ class MyCorpus(object):
 class callback(CallbackAny2Vec):
     '''Callback to print loss after each epoch.'''
 
-    def __init__(self):
+    def __init__(self, model_filename):
         self.epoch = 0
         self.loss_to_be_subed = 0
+        self.model_filename = model_filename
 
     def on_epoch_end(self, model):
         loss = model.get_latest_training_loss()
@@ -36,7 +38,17 @@ class callback(CallbackAny2Vec):
         print('Loss after epoch {}: {}'.format(self.epoch, loss_now))
         self.epoch += 1
 
-def train_model(model_type, arguments, model_file, train_data):
+        # evaluate
+        result_string = "\n" + "=" * 50 + "\nEpoch: {}:\n".format(self.epoch)
+        result_string += intrusion(model)
+        result_string += analogy(model)
+        # result_string += nearest_neighbours(model)
+
+        result_file = os.path.join("results", self.model_filename + "_intermediate_results.txt")
+        with open(result_file, 'a', encoding='utf-8') as f:
+            f.write(result_string)
+
+def train_model(model_type, arguments, model_file, train_data, model_filename):
     corpus_iterator = MyCorpus(train_data)
 
     print("Train "+model_type+" model using corpus", train_data)
@@ -56,7 +68,7 @@ def train_model(model_type, arguments, model_file, train_data):
                         negative =  arguments['negative'],
                         iter =      arguments['iter'],
                         compute_loss=True,
-                        callbacks = [callback()],
+                        callbacks = [callback(model_filename)],
                     )
         model.wv.save_word2vec_format(model_file, binary=True)
 

@@ -14,7 +14,7 @@ model_file_type = ".bin"
 # model_file_type = ".txt"
 
 # train new or use pretrained?
-TRAIN = False
+TRAIN = True
 
 if TRAIN:
     """
@@ -77,13 +77,13 @@ if TRAIN:
     # corpus_name = "a-iltalehti-2020-02-28_normalized_split"
     # corpus_name = "wikipedia2008_fi_lemmatized"
     # corpus_name = "iltalehti-2020-02-28_wikipedia"
-    corpus_name = "iltalehti-wikipedia_new"
+    corpus_name = "yle_small"
 
     train_data_file = os.path.join(config.CORPUS_DIR, corpus_name + ".txt")
 
     # loop to train and evaluate multiple models
-    for min_count in range(5):
-        arguments['min_count'] = min_count + 1
+    for min_count in range(1):
+        # arguments['min_count'] = min_count + 1
 
         # create a string from the args for the file name
         # if fasttext, print also n-gram lengths
@@ -101,7 +101,7 @@ if TRAIN:
         # remember to switch the right model_file_type
         model_file = os.path.join(config.EMBEDDINGS_DIR, model_filename + model_file_type)
 
-        model = train_model(model_type, arguments, model_file, train_data_file)
+        model = train_model(model_type, arguments, model_file, train_data_file, model_filename)
 
         # evaluate
         result_string = intrusion(model)
