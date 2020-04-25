@@ -74,8 +74,11 @@ if not args.evaluate:
     w2v_model = None
     if args.emmodel != 'no':
         print("using pretrained word embeddings", args.emmodel)
-        # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
-        w2v_model = Word2Vec.load(args.emmodel)
+        try:
+            w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
+        except UnicodeDecodeError:
+            # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=False)
+            w2v_model = Word2Vec.load(args.emmodel)
         assert w2v_model.vector_size == args.emsize
 
     # initialise uniformly
