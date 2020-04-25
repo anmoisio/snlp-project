@@ -9,6 +9,7 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.tokenize import word_tokenize
 import time
 from tqdm import tqdm
+import re
 
 def capitalize_data():
     """
@@ -187,6 +188,50 @@ def split_sentences():
             f.write(line)
             f.write('\n')
 
+def num_to_hashtag(filename):
+    """
+    Replace the numbers with hashtags in the corpus
+    """
+    #Open the text file
+    with open(os.path.join('data', 'corpora', filename),
+              'r', encoding='utf-8') as f:
+        text = f.read()
+     
+    #Replace numbers with hashtags. Replace all numbers with more than four
+    #digits with five hashtags
+    text = re.sub('[0-9]', '#', text)
+    text = re.sub('[0-9]{2}', '##', text)
+    text = re.sub('[0-9]{3}', '###', text)
+    text = re.sub('[0-9]{4}', '####', text)
+    text = re.sub('[0-9]{5,}', '#####', text)
+    
+    #Write the processed text to a file and save it in /data/corpora/
+    filename_processed = filename[:-4]+'_no_nums.txt'
+    with open(os.path.join('data', 'corpora', filename_processed),
+              'w', encoding='utf-8') as f:
+        f.write(text)
+
+def rm_punctuation(filename):
+    import string
+    """
+    Remove punctuation and special characters in corpus
+    """
+    #Open the text file
+    with open(os.path.join('data', 'corpora', filename),
+              'r', encoding='utf-8') as f:
+        text = f.read()
+     
+    #Remove all punctuation and special characters
+    punctuation = string.punctuation.replace('.','')
+    pattern = r"[{}]".format(punctuation)
+    text = re.sub(pattern,' ', text)
+    
+    #Write the processed text to a file and save it in /data/corpora/
+    filename_processed = filename[:-4]+'_no_punct.txt'
+    with open(os.path.join('data', 'corpora', filename_processed),
+              'w', encoding='utf-8') as f:
+        f.write(text)
+        
 def normalise(filename, lemmatize=True):
     """
     Normalise a corpus from /data/corpora/
@@ -209,8 +254,9 @@ def normalise(filename, lemmatize=True):
     #Remove numbers
     #text = ''.join(c for c in text if not c.isdigit())
     
-    #Tokenize & remove punctuation
-    #tokenizer = RegexpTokenizer(r'\w+')
+    #Tokenize & remove punctuation and special characters
+    #print("Tokenizing & removing punctuation and special characters...")
+    #tokenizer = RegexpTokenizer(r'\w+','.')
     #text = tokenizer.tokenize(text)
     
     #Tokenize
