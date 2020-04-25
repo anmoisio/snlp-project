@@ -299,7 +299,7 @@ def normalise(filename, lemmatize=True):
         #Write one sentence per line
         for sentence in ' '.join(text).split(' .'):
             #Write only if sentence consists of more than one word
-            if len(sentence)>1:
+            if len(word_tokenize(sentence))>1:
                 f.write(sentence)
                 f.write(' .\n')
 
