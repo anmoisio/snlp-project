@@ -266,14 +266,14 @@ def normalise(filename, lemmatize=True):
                 else:
                     text[idx] = analyzed[0]['BASEFORM']
         
-        #If lemmatization is not needed, check only the first words of the
-        #sentences and lowercase, if needed
+        #If lemmatization is not needed, check only the capitalized words
+        #and lowercase, if needed
         else:
             #Check if the word is the first word of a sentence
-            if word[0].isupper() and text[idx-1] == '.':
+            if word[0].isupper():
                 analyzed = analyzer.analyze(word)
                 
-                #Lowercase the first word of a sentence if its lemma is
+                #Lowercase the word if its lemma is
                 #lowercased (if the lemma is not a proper noun)
                 if analyzed and analyzed[0]['BASEFORM'][0].islower():
                     text[idx] = text[idx].lower()
@@ -301,7 +301,7 @@ def normalise(filename, lemmatize=True):
             #Write only if sentence consists of more than one word
             if len(sentence)>1:
                 f.write(sentence)
-                f.write('.\n')
+                f.write(' .\n')
 
 def parse_yle():
     """ Parse Yle news .json corpus"""
