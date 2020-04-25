@@ -187,9 +187,9 @@ def split_sentences():
             f.write(line)
             f.write('\n')
 
-def normalise():
+def normalise(filename, lemmatize=True):
     """
-    Normalise corpus
+    Normalise a corpus from /data/corpora/
     """
     import libvoikko
     #Define a Voikko class for Finnish
@@ -198,7 +198,7 @@ def normalise():
     #Open the text file
     print("Reading the input text file...")
     with open(os.path.join('data', 'corpora', 
-                           'a-iltalehti-2020-02-28.txt'),
+                           filename),
               'r', encoding='utf-8') as f:
         text = f.read()
     
@@ -224,55 +224,70 @@ def normalise():
         if word.isdigit() and text[idx+1] == '.' and text[idx+2][0].islower():
             text[idx:idx+2] = [''.join(text[idx:idx+2])]
             
-    #Lemmatize tokens
+    #Lemmatize tokens if lemmatize=True
     pbar = tqdm(total=text_length, ascii=True, desc = 'Lemmatizing...',
                 position=0,unit='keys', unit_scale=True)
     for idx, word in enumerate(text):
-        #Check if word is found from dictionary
         
-        analyzed = analyzer.analyze(word)
-        if analyzed:
-            #Lemmatize the word. analyze() function returns
-            #various info for the word
-            
-            #Check if word starts with lowercase
-            if word[0].islower():   
+        #Lemmatize the word. analyze() function returns
+        #various info for the word
+        if lemmatize:
+
+            #Check if word is found from dictionary
+            analyzed = analyzer.analyze(word)
+            if analyzed:
                 
-                #Check if there are more than 1 possible lemmas in the vocabulary
-                if len(analyzed)>1:
-                    #Esclude classes paikannimi, sukunimi, etunimi, nimi
-                    analyzed_mod = [element for element in analyzed if
-                                'paikannimi' not in element.values() and
-                                'sukunumi' not in element.values() and
-                                'etunumi' not in element.values() and
-                                'nimi' not in element.values()]
+                #Check if word starts with lowercase
+                if word[0].islower():   
                     
-                    #Avoid an error if it turns out to be empty list after
-                    #excluding these classes
-                    if len(analyzed_mod)>0:
-                        text[idx] = analyzed_mod[0]['BASEFORM'].lower()
+                    #Check if there are more than 1 possible lemmas in the vocabulary
+                    if len(analyzed)>1:
+                        #Esclude classes paikannimi, sukunimi, etunimi, nimi
+                        analyzed_mod = [element for element in analyzed if
+                                    'paikannimi' not in element.values() and
+                                    'sukunumi' not in element.values() and
+                                    'etunumi' not in element.values() and
+                                    'nimi' not in element.values()]
+                        
+                        #Avoid an error if it turns out to be empty list after
+                        #excluding these classes
+                        if len(analyzed_mod)>0:
+                            text[idx] = analyzed_mod[0]['BASEFORM'].lower()
+                        else:
+                            text[idx] = analyzed[0]['BASEFORM'].lower()
+                    
+                    #Pick the lowercased lemma directly if there is only one lemma
+                    #for the query word
                     else:
                         text[idx] = analyzed[0]['BASEFORM'].lower()
                 
-                #Pick the lowercased lemma directly if there is only one lemma
-                #for the query word
+                #The word is capitalized => proper noun or/and the first word of a
+                #sentence. Pick the lemma from the vocabulary.
                 else:
-                    text[idx] = analyzed[0]['BASEFORM'].lower()
-            
-            #The word is capitalized => proper noun or/and the first word of a
-            #sentence. Pick the lemma without applying lowercasing.
-            else:
-                text[idx] = analyzed[0]['BASEFORM']
+                    text[idx] = analyzed[0]['BASEFORM']
+        
+        #If lemmatization is not needed, check only the first words of the
+        #sentences and lowercase, if needed
+        else:
+            #Check if the word is the first word of a sentence
+            if word[0].isupper() and text[idx-1] == '.':
+                analyzed = analyzer.analyze(word)
+                
+                #Lowercase the first word of a sentence if its lemma is
+                #lowercased (if the lemma is not a proper noun)
+                if analyzed and analyzed[0]['BASEFORM'][0].islower():
+                    text[idx] = text[idx].lower()
+        
         pbar.update(1)
     
     #Print normalized text
     #print("TEXT AFTER NORMALISATION")    
     #print(' '.join(text))
     
-    #Write tokenized text to a new text file
+    #Write tokenized text to a text file and save it in /data/corpora/
     print("\nWriting the normalized text to a txt file...")
     with open(os.path.join('data', 'corpora', 
-                           'a-iltalehti-2020-02-28_normalized.txt'),
+                           filename[:-4]+'_normalized.txt'),
               'w', encoding='utf-8') as f:
         
         #Write the whole text in one line
