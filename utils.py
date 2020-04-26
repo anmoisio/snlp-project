@@ -272,7 +272,6 @@ def normalise(filename, lemmatize=True):
         #If lemmatization is not needed, check only the capitalized words
         #and lowercase, if needed
         else:
-            #Check if the word is the first word of a sentence
             if word[0].isupper():
                 analyzed = analyzer.analyze(word)
                 
@@ -339,8 +338,7 @@ def rm_punctuation(filename):
         text = f.read()
      
     #Remove all punctuation and special characters
-    punctuation = string.punctuation.replace('.','')
-    pattern = r"[{}]".format(punctuation)
+    pattern = r"[{}]".format(string.punctuation)
     text = re.sub(pattern,' ', text)
     
     #Write the processed text to a file and save it in /data/corpora/
