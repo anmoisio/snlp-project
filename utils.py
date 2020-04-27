@@ -147,7 +147,7 @@ def plot_pca(w2v_model):
 
 
 def split_LM_corpus():
-    file1 = os.path.join("data", "corpora", "iltalehti_new.txt")
+    file1 = os.path.join("data", "corpora", "iltalehti_fixed_NON-lemmatized.txt")
 
     with open(file1, 'r', encoding='utf-8') as f:
         corpus = f.readlines()
@@ -163,17 +163,19 @@ def split_LM_corpus():
     val = rest[1:int(len(rest)*0.5)]
     test = rest[int(len(rest)*0.5):]
 
-    with open(os.path.join("data", "corpora", "train.txt"), 'w', encoding='utf-8') as f:
+    with open(os.path.join("data", "corpora", "il_nonlem", "train.txt"), 'w', encoding='utf-8') as f:
         for line in train:
             f.write(line)
 
-    with open(os.path.join("data", "corpora", "valid.txt"), 'w', encoding='utf-8') as f:
+    with open(os.path.join("data", "corpora", "il_nonlem", "valid.txt"), 'w', encoding='utf-8') as f:
         for line in val:
             f.write(line)
 
-    with open(os.path.join("data", "corpora", "test.txt"), 'w', encoding='utf-8') as f:
+    with open(os.path.join("data", "corpora", "il_nonlem", "test.txt"), 'w', encoding='utf-8') as f:
         for line in test:
             f.write(line)
+
+split_LM_corpus()
             
 def split_sentences():
     # DEPRECATED. Included in normalise()

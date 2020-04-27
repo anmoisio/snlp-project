@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 from gensim.models import KeyedVectors, Word2Vec
+from gensim.models.keyedvectors import FastTextKeyedVectors
 
 import data
 import model
@@ -14,11 +15,11 @@ import model
 parser = argparse.ArgumentParser(description='PyTorch RNN/LSTM/GRU Language Model')
 parser.add_argument('--data', type=str, default='wikitext-2',
                     help='location of the data corpus')
-parser.add_argument('--evaluate', type=str, default='model.pt',
+parser.add_argument('--evaluate', type=str, default=None,
                     help='only evaluation')
 parser.add_argument('--model', type=str, default='LSTM',
                     help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU)')
-parser.add_argument('--emsize', type=int, default=100,
+parser.add_argument('--emsize', type=int, default=200,
                     help='size of word embeddings')
 parser.add_argument('--nhid', type=int, default=100,
                     help='number of hidden units per layer')
@@ -74,11 +75,10 @@ if not args.evaluate:
     w2v_model = None
     if args.emmodel != 'no':
         print("using pretrained word embeddings", args.emmodel)
-        try:
-            w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
-        except UnicodeDecodeError:
-            # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=False)
-            w2v_model = Word2Vec.load(args.emmodel)
+        # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
+        # w2v_model = Word2Vec.load(args.emmodel)
+        w2v_model = FastTextKeyedVectors.load(args.emmodel)
+
         assert w2v_model.vector_size == args.emsize
 
     # initialise uniformly
