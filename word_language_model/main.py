@@ -21,7 +21,7 @@ parser.add_argument('--model', type=str, default='LSTM',
                     help='type of recurrent net (RNN_TANH, RNN_RELU, LSTM, GRU)')
 parser.add_argument('--emsize', type=int, default=200,
                     help='size of word embeddings')
-parser.add_argument('--nhid', type=int, default=100,
+parser.add_argument('--nhid', type=int, default=200,
                     help='number of hidden units per layer')
 parser.add_argument('--nlayers', type=int, default=2,
                     help='number of layers')
@@ -29,7 +29,7 @@ parser.add_argument('--lr', type=float, default=20,
                     help='initial learning rate')
 parser.add_argument('--clip', type=float, default=0.25,
                     help='gradient clipping')
-parser.add_argument('--epochs', type=int, default=40,
+parser.add_argument('--epochs', type=int, default=6,
                     help='upper epoch limit')
 parser.add_argument('--batch_size', type=int, default=20, metavar='N',
                     help='batch size')
@@ -75,9 +75,11 @@ if not args.evaluate:
     w2v_model = None
     if args.emmodel != 'no':
         print("using pretrained word embeddings", args.emmodel)
-        # w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
-        # w2v_model = Word2Vec.load(args.emmodel)
-        w2v_model = FastTextKeyedVectors.load(args.emmodel)
+        try:
+            w2v_model = KeyedVectors.load_word2vec_format(args.emmodel, binary=True)
+            # w2v_model = Word2Vec.load(args.emmodel)
+        except UnicodeDecodeError:
+            w2v_model = FastTextKeyedVectors.load(args.emmodel)
 
         assert w2v_model.vector_size == args.emsize
 
@@ -86,13 +88,15 @@ if not args.evaluate:
     nn.init.uniform_(vectors)
     print("encoder layer shape", vectors.shape)
     # use pretrained vectors if available
+    oov_count = 0
     if w2v_model:
         for i, word in enumerate(corpus.dictionary.idx2word):
             try:
                 # print(w2v_model.wv[word].shape, vectors[i].shape)
                 vectors[i] = torch.tensor(w2v_model.wv[word])
             except KeyError as err:
-                pass
+                print("OOV word in test corpus:", word)
+                oov_count += 1
 
 
 # Starting from sequential data, batchify arranges the dataset into columns.

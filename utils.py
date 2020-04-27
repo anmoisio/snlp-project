@@ -174,8 +174,6 @@ def split_LM_corpus():
     with open(os.path.join("data", "corpora", "il_nonlem", "test.txt"), 'w', encoding='utf-8') as f:
         for line in test:
             f.write(line)
-
-split_LM_corpus()
             
 def split_sentences():
     # DEPRECATED. Included in normalise()
@@ -307,6 +305,13 @@ def normalise(filename, lemmatize=True):
                 f.write(sentence)
                 f.write(' .\n')
 
+normalise("yle_test.txt", lemmatize=False)
+normalise("yle_val.txt", lemmatize=False)
+normalise("yle_train.txt", lemmatize=False)
+normalise("yle_test.txt", lemmatize=True)
+normalise("yle_val.txt", lemmatize=True)
+normalise("yle_train.txt", lemmatize=True)
+
 def num_to_hashtag(filename):
     """
     Replace the numbers with hashtags in the corpus
@@ -353,14 +358,23 @@ def parse_yle():
     """ Parse Yle news .json corpus"""
     yle_dir = os.path.join(config.CORPUS_DIR, "ylenews-fi-2011-2018-src", "data", "fi")
 
-    # use mode 'a' if you parse many files
-    with open(os.path.join(config.CORPUS_DIR, 'yle_small.txt'), 'w', encoding="utf-8") as save_file:
+    with open(os.path.join(config.CORPUS_DIR, 'yle_val.txt'), 'w', encoding="utf-8") as save_file:
         ## use wildcards * to parse many files
         # for filename in glob.glob(os.path.join(yle_dir, "*", "*", "*.json")):
-        for filename in glob.glob(os.path.join(yle_dir, "2018", "01", "0001.json")): 
+        for filename in glob.glob(os.path.join(yle_dir, "2018", "03", "0000.json")): 
             with open(filename, 'r', encoding="utf-8") as f:
                 json_file = json.load(f)
                 for article in json_file['data']:
                     for item in article['content']:
                         if item['type'] == 'text':
-                            save_file.write(item['text'])
+                            save_file.write(item['text'] + "\n")
+
+
+def count_words():
+    with open(os.path.join(config.CORPUS_DIR, 'yle_val.txt'), 'r', encoding="utf-8") as f:
+        lines = f.read().splitlines()
+        print("lines", len(lines))
+
+        tokens = [[token for token in line] for line in lines]
+        print("tokens", len(tokens))
+        print("word types", len(set(tokens)))

@@ -39,14 +39,14 @@ class callback(CallbackAny2Vec):
         self.epoch += 1
 
         # evaluate
-        result_string = "\n" + "=" * 50 + "\nEpoch: {}:\n".format(self.epoch)
-        result_string += intrusion(model)
-        result_string += analogy(model)
-        # result_string += nearest_neighbours(model)
+        # result_string = "\n" + "=" * 50 + "\nEpoch: {}:\n".format(self.epoch)
+        # result_string += intrusion(model)
+        # result_string += analogy(model)
+        # # result_string += nearest_neighbours(model)
 
-        result_file = os.path.join("results", self.model_filename + "_intermediate_results.txt")
-        with open(result_file, 'a', encoding='utf-8') as f:
-            f.write(result_string)
+        # result_file = os.path.join("results", self.model_filename + "_intermediate_results.txt")
+        # with open(result_file, 'a', encoding='utf-8') as f:
+        #     f.write(result_string)
 
 def train_model(model_type, arguments, model_file, train_data, model_filename):
     corpus_iterator = MyCorpus(train_data)
