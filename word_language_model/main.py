@@ -95,8 +95,9 @@ if not args.evaluate:
                 # print(w2v_model.wv[word].shape, vectors[i].shape)
                 vectors[i] = torch.tensor(w2v_model.wv[word])
             except KeyError as err:
-                print("OOV word in test corpus:", word)
+                # print("OOV word in test corpus:", word)
                 oov_count += 1
+    print("OOV count", oov_count)
 
 
 # Starting from sequential data, batchify arranges the dataset into columns.

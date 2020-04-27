@@ -1,4 +1,6 @@
-# ELEC-E5550 Statistical Natural Language Processing project: word2vec embeddings
+# Finnish word embedding training and evaluation
+ELEC-E5550 Statistical Natural Language Processing project
+
 Group 21: Joel Lindfors, Yaroslav Getman, Anssi Moisio
 
 ## Instructions
@@ -18,8 +20,11 @@ Download Yle corpus:
 - https://korp.csc.fi/download/YLE/fi/2011-2018-src/ylenews-fi-2011-2018-src
 
 
-Embedding statistics:
+Stats:
 ---
-fin-word2vec-lemma.bin:
-- vocab size: 2 208 293
-- dim: 300
+- fin-word2vec-lemma.bin:
+    - vocab size: 2 208 293
+    - dim: 300
+- Iltalehti corpus:
+    - tokens: 20 314 343
+    - vocab size: 388 444

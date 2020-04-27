@@ -305,13 +305,6 @@ def normalise(filename, lemmatize=True):
                 f.write(sentence)
                 f.write(' .\n')
 
-normalise("yle_test.txt", lemmatize=False)
-normalise("yle_val.txt", lemmatize=False)
-normalise("yle_train.txt", lemmatize=False)
-normalise("yle_test.txt", lemmatize=True)
-normalise("yle_val.txt", lemmatize=True)
-normalise("yle_train.txt", lemmatize=True)
-
 def num_to_hashtag(filename):
     """
     Replace the numbers with hashtags in the corpus
@@ -371,10 +364,15 @@ def parse_yle():
 
 
 def count_words():
-    with open(os.path.join(config.CORPUS_DIR, 'yle_val.txt'), 'r', encoding="utf-8") as f:
+    with open(os.path.join("..", "yle_norm", 'train.txt'), 'r', encoding="utf-8") as f:
         lines = f.read().splitlines()
+        lines = [line.split() for line in lines]
         print("lines", len(lines))
 
-        tokens = [[token for token in line] for line in lines]
+        tokens = []
+        for line in lines:
+            for token in line:
+                tokens.append(token)
+
         print("tokens", len(tokens))
         print("word types", len(set(tokens)))
