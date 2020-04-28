@@ -362,9 +362,8 @@ def parse_yle():
                         if item['type'] == 'text':
                             save_file.write(item['text'] + "\n")
 
-
 def count_words():
-    with open(os.path.join("..", "yle_norm", 'train.txt'), 'r', encoding="utf-8") as f:
+    with open(os.path.join("word_language_model", "data", "yle_norm", 'test.txt'), 'r', encoding="utf-8") as f:
         lines = f.read().splitlines()
         lines = [line.split() for line in lines]
         print("lines", len(lines))
